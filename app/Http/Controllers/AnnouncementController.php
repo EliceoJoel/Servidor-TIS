@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -41,3 +42,17 @@ class AnnouncementController extends Controller
         return $announcement;
     }
 }
+=======
+namespace Announcement\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Announcement\Announcement;
+
+class AnnouncementController extends Controller
+{
+    public function upload(Request $request){
+        $announcement = announcement::create($request->all());
+        return $announcement;
+    }
+}
+>>>>>>> aumentando controlador, ruta y announcement.php para announcement
