@@ -1,9 +1,9 @@
 <?php
 
-namespace Postulant\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Postulant\Announcement;
+use App\Announcement;
 
 class AnnouncementController extends Controller
 {

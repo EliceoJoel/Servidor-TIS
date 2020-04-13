@@ -1,6 +1,6 @@
 <?php
 
-namespace Postulant;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
