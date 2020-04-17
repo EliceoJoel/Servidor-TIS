@@ -1,6 +1,5 @@
 <?php
 
-<<<<<<< HEAD
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -42,6 +41,7 @@ class AnnouncementController extends Controller
         return $announcement;
     }
 }
+<<<<<<< HEAD
 =======
 namespace Announcement\Http\Controllers;
 
@@ -56,3 +56,5 @@ class AnnouncementController extends Controller
     }
 }
 >>>>>>> aumentando controlador, ruta y announcement.php para announcement
+=======
+>>>>>>> arreglos en conflictos announcement

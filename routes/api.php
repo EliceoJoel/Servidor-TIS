@@ -30,6 +30,7 @@ Route::post('postulant/{id}', 'PostulantController@edit')->name('editPostulant')
 //delete
 Route::get('postulant/delete/{id}', 'PostulantController@delete')->name('deletePostulant');
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 //post/announcement
@@ -42,3 +43,7 @@ Route::get('announcement/{id}', 'AnnouncementController@get')->name('getAnnounce
 //post/announcement
 Route::post('announcement', 'AnnouncementController@upload')->name ('uploadAnnouncement');
 >>>>>>> aumentando controlador, ruta y announcement.php para announcement
+=======
+//post/announcement
+Route::post('announcement', 'AnnouncementController@add')->name ('addAnnouncement');
+>>>>>>> arreglos en conflictos announcement
