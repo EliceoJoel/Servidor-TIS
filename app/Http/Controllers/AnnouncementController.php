@@ -8,8 +8,8 @@ use App\Announcement;
 class AnnouncementController extends Controller
 {
     public function add(Request $request){
-    
-        $announcement = $request->file('file')->store('file');
+        $filename = $request->file('filepdf') -> getClientOriginalName();
+        $announcement = $request->file('filepdf')->storeAs('filepdf', $filename);
         $announcement = Announcement::create($request->all());
         return $announcement;
     }

@@ -30,7 +30,6 @@ Route::post('postulant/{id}', 'PostulantController@edit')->name('editPostulant')
 //delete
 Route::get('postulant/delete/{id}', 'PostulantController@delete')->name('deletePostulant');
 
-//ANNOuUNCEMENT//
 
 //post/announcement
 Route::post('announcement', 'AnnouncementController@add')->name ('addAnnouncement');
