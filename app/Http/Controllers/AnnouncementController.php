@@ -54,6 +54,10 @@ class AnnouncementController extends Controller
         $announcement = announcement::create($request->all());
         return $announcement;
     }
+    public function getAll(){
+        $announcement = Announcement::all();
+        return $announcement;
+    }
 }
 >>>>>>> aumentando controlador, ruta y announcement.php para announcement
 =======

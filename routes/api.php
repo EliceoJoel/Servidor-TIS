@@ -46,4 +46,9 @@ Route::post('announcement', 'AnnouncementController@upload')->name ('uploadAnnou
 =======
 //post/announcement
 Route::post('announcement', 'AnnouncementController@add')->name ('addAnnouncement');
+<<<<<<< HEAD
 >>>>>>> arreglos en conflictos announcement
+=======
+//get all announcement
+Route::get('announcement', 'AnnouncementController@getAll')->name('getAllAnnouncement');
+>>>>>>> aumentando get a announcement
