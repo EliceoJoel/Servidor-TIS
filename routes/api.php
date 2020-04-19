@@ -29,8 +29,6 @@ Route::get('postulant/{id}', 'PostulantController@get')->name('getPostulant');
 Route::post('postulant/{id}', 'PostulantController@edit')->name('editPostulant');
 //delete
 Route::get('postulant/delete/{id}', 'PostulantController@delete')->name('deletePostulant');
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 
 //post/announcement
@@ -39,16 +37,3 @@ Route::post('announcement', 'AnnouncementController@add')->name ('addAnnouncemen
 Route::get('announcement', 'AnnouncementController@getAll')->name('getAllAnnouncement');
 //get one
 Route::get('announcement/{id}', 'AnnouncementController@get')->name('getAnnouncement');
-=======
-//post/announcement
-Route::post('announcement', 'AnnouncementController@upload')->name ('uploadAnnouncement');
->>>>>>> aumentando controlador, ruta y announcement.php para announcement
-=======
-//post/announcement
-Route::post('announcement', 'AnnouncementController@add')->name ('addAnnouncement');
-<<<<<<< HEAD
->>>>>>> arreglos en conflictos announcement
-=======
-//get all announcement
-Route::get('announcement', 'AnnouncementController@getAll')->name('getAllAnnouncement');
->>>>>>> aumentando get a announcement
