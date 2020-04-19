@@ -19,11 +19,7 @@ class CreateAnnouncementTable extends Migration
         $table->string('year', 30);
         $table->string('type', 30);
         $table->string('departament', 50);
-<<<<<<< HEAD
         $table->json('auxiliary');
-=======
-        $table->string('auxiliary', 100);
->>>>>>> parte del servidor para subir pdf
         $table->string('file');
         $table->timestamps();
         });
