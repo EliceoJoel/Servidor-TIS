@@ -9,6 +9,7 @@ class AnnouncementController extends Controller
 {
     public function add(Request $request){
 <<<<<<< HEAD
+<<<<<<< HEAD
         $filename = $request->file('filepdf') -> getClientOriginalName();
         $announcement = $request->file('filepdf')->storeAs('filepdf', $filename);
         $announcement = Announcement::create($request->all());
@@ -53,6 +54,19 @@ class AnnouncementController extends Controller
     public function upload(Request $request){
         $announcement = announcement::create($request->all());
         return $announcement;
+=======
+        
+         $originalname = $request-> file ('filepdf')->getClientOriginalName();
+         $announcement = $request->file('filepdf')->storeAs('file', $originalname);
+         
+         $announcement = Announcement::create($request->all());
+        
+         return $announcement;
+        //$announcement = $request->file('file')->store('file');
+      
+      
+       
+>>>>>>> el file se guarda con su nombre en storage/file
     }
     public function getAll(){
         $announcement = Announcement::all();
