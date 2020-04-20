@@ -16,12 +16,14 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+//
+Route::get('postulant/{id}','PostulantController@show')->where('id','[0-9]+');
 //get all
 Route::get('postulant', 'PostulantController@getAll')->name('getAllPostulant');
 //post
 Route::post('postulant','PostulantController@add')->name('addPostulant');
 //get one
-Route::get('postulant/{id}', 'PostulantController@get')->name('getPostulant');
+//Route::get('postulant/{id}', 'PostulantController@get')->name('getPostulant');
 //edit/put
 Route::post('postulant/{id}', 'PostulantController@edit')->name('editPostulant');
 //delete
