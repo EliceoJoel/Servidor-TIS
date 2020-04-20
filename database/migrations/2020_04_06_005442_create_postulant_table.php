@@ -13,7 +13,7 @@ class CreatePostulantTable extends Migration
      */
     public function up()
     {
-        Schema::create('postulant',function (Blueprint $table) {
+        Schema::create('postulants',function (Blueprint $table) {
             $table->increments('id');
             $table->string('names', 30);
             $table->string('first_surname', 30);
