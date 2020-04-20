@@ -12,6 +12,11 @@ class PostulantController extends Controller
         return $postulant;
     }
 
+    public function show($id){
+        $postulant = Postulant::findOrFail($id);
+        return response()->json($postulant);
+    }
+
     public function add(Request $request){
         $postulant = Postulant::create($request->all());
         return $postulant;
