@@ -36,5 +36,18 @@ class PostulantTest extends TestCase{
         $response->assertJsonStructure(['id','names','first_surname','second_surname',
                                 'direction','email','phone','ci','auxiliary']);
         $response->status(201);
+
+    }
+
+    //examina registros existentes de la base de datos, si existe o no dicho registro
+    public function testExists(){
+        $register = [
+            'id' => 2016, 'names' => 'jose maria',
+            'first_surname' => 'aguilar', 'second_surname' => 'chambi',
+            'direction' => 'villa jerusalen', 'email' => 'josmariaguilar@gmail.com',
+            'phone' => 79368354, 'ci' => 9999999, 'auxiliary' => 'en_duda'
+        ];
+
+        $this->assertDatabaseHas('postulants',$register);
     }
 }
