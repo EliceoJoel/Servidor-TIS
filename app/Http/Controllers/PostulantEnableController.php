@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PostulantEnable extends Controller
+class PostulantEnableController extends Controller
 {
     //
 }
