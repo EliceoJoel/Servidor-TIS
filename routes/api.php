@@ -29,7 +29,7 @@ Route::get('postulant/{id}', 'PostulantController@get')->name('getPostulant');
 Route::post('postulant/{id}', 'PostulantController@edit')->name('editPostulant');
 //delete
 Route::get('postulant/delete/{id}', 'PostulantController@delete')->name('deletePostulant');
-
+//ANNOUNCEMENT//
 
 //post/announcement
 Route::post('announcement', 'AnnouncementController@add')->name ('addAnnouncement');
@@ -37,6 +37,7 @@ Route::post('announcement', 'AnnouncementController@add')->name ('addAnnouncemen
 Route::get('announcement', 'AnnouncementController@getAll')->name('getAllAnnouncement');
 //get one
 Route::get('announcement/{id}', 'AnnouncementController@get')->name('getAnnouncement');
+
 
 
 //POSTULANTENABLE//
@@ -63,3 +64,9 @@ Route::get('registerBook/{id}', 'RegisterBookController@get')->name('getRegister
 Route::post('registerBook/{id}', 'RegisterBookController@edit')->name('editRegisterBook');
 //delete
 Route::get('registerBook/delete/{id}', 'RegisterBookController@delete')->name('deleteRegisterBook');
+
+//POSTULANTENABLE//
+//post postulantenable
+Route::post('postulantenable', 'PostulantEnableController@add')->name ('addPostulantEnable');
+//get all postulantenable
+Route::get('postulantenable', 'PostulantEnableController@getAll')->name('getAllPostulantEnable');
