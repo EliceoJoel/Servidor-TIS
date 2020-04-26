@@ -37,3 +37,17 @@ Route::post('announcement', 'AnnouncementController@add')->name ('addAnnouncemen
 Route::get('announcement', 'AnnouncementController@getAll')->name('getAllAnnouncement');
 //get one
 Route::get('announcement/{id}', 'AnnouncementController@get')->name('getAnnouncement');
+
+
+//POSTULANTENABLE//
+Route::get('postulantEnable', 'PostulantEnableController@getAll')->name('getAllPostulantEnable');
+//post
+Route::post('postulantEnable','PostulantEnableController@add')->name('addPostulantEnable');
+//get one
+Route::get('postulantEnable/{id}', 'PostulantEnableController@get')->name('getPostulantEnable');
+//edit/put
+Route::post('postulantEnable/{id}', 'PostulantEnableController@edit')->name('editPostulantEnable');
+//delete
+Route::get('postulantEnable/delete/{id}', 'PostulantEnableController@delete')->name('deletePostulantEnable');
+
+
