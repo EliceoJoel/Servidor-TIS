@@ -40,6 +40,7 @@ Route::get('announcement/{id}', 'AnnouncementController@get')->name('getAnnounce
 
 
 
+
 // //POSTULANTENABLE//
 // Route::get('postulantEnable', 'PostulantEnableController@getAll')->name('getAllPostulantEnable');
 // //post
@@ -81,3 +82,9 @@ Route::get('postulantenable', 'PostulantEnableController@getAll')->name('getAllP
 Route::post('importantDate', 'ImportantDateController@add')->name ('addImportantDate');
 //get all postulantenable
 Route::get('importantDate', 'ImportantDateController@getAll')->name('getAllImportantDate');
+
+//POSTULANTENABLE//
+//post postulantenable
+Route::post('postulantenable', 'PostulantEnableController@add')->name ('addPostulantEnable');
+//get all postulantenable
+Route::get('postulantenable', 'PostulantEnableController@getAll')->name('getAllPostulantEnable');
