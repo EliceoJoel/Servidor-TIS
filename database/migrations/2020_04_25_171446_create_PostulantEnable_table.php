@@ -13,13 +13,13 @@ class CreatePostulantEnableTable extends Migration
      */
     public function up()
     {
-        Schema::create('PostulantEnable',function (Blueprint $table) {
+        Schema::create('postulantEnable',function (Blueprint $table) {
             $table->increments('id');
-            $table->string('sys_code', 9);
+            $table->string('sis_code', 9);
             $table->string('auxiliary', 50);
             $table->string('announcement', 50);
             $table->boolean('enable');
-            $table->string('reason');
+            $table->string('reason')->nullable();
             $table->timestamps();
         });
     }
