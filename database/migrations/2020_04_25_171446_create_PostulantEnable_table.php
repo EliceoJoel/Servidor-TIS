@@ -15,7 +15,7 @@ class CreatePostulantEnableTable extends Migration
     {
         Schema::create('postulantEnable',function (Blueprint $table) {
             $table->increments('id');
-            $table->string('sis_code', 9);
+            $table->string('name', 150);
             $table->string('auxiliary', 50);
             $table->string('announcement', 50);
             $table->boolean('enable');
