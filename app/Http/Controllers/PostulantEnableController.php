@@ -7,7 +7,6 @@ use App\PostulantEnable;
 
 class PostulantEnableController extends Controller
 {
-<<<<<<< HEAD
     public function getAll(){
         $postulantEnable = PostulantEnable::all();
         return $postulantEnable;
@@ -33,15 +32,5 @@ class PostulantEnableController extends Controller
         $postulantEnable = $this->get($id);
         $postulantEnable->delete();
         return $postulantEnable;
-=======
-    public function add(Request $request){
-        $PostulantEnable = PostulantEnable::create($request->all());
-        return $PostulantEnable;
-    }
-
-    public function getAll(){
-        $PostulantEnable = PostulantEnable::all();
-        return $PostulantEnable;
->>>>>>> cambios en ruta y en controladores
     }
 }

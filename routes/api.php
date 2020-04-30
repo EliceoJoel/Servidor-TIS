@@ -83,8 +83,11 @@ Route::post('importantDate', 'ImportantDateController@add')->name ('addImportant
 //get all postulantenable
 Route::get('importantDate', 'ImportantDateController@getAll')->name('getAllImportantDate');
 
+<<<<<<< HEAD
 //POSTULANTENABLE//
 //post postulantenable
 Route::post('postulantenable', 'PostulantEnableController@add')->name ('addPostulantEnable');
 //get all postulantenable
 Route::get('postulantenable', 'PostulantEnableController@getAll')->name('getAllPostulantEnable');
+=======
+>>>>>>> postulantcontroller aumentando funciones
