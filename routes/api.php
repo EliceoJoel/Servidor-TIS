@@ -38,7 +38,6 @@ Route::get('announcement', 'AnnouncementController@getAll')->name('getAllAnnounc
 //get one
 Route::get('announcement/{id}', 'AnnouncementController@get')->name('getAnnouncement');
 
-<<<<<<< HEAD
 
 //POSTULANTENABLE//
 Route::get('postulantEnable', 'PostulantEnableController@getAll')->name('getAllPostulantEnable');
@@ -52,10 +51,3 @@ Route::post('postulantEnable/{id}', 'PostulantEnableController@edit')->name('edi
 Route::get('postulantEnable/delete/{id}', 'PostulantEnableController@delete')->name('deletePostulantEnable');
 
 
-=======
-//POSTULANTENABLE//
-//post postulantenable
-Route::post('postulantenable', 'PostulantEnableController@add')->name ('addPostulantEnable');
-//get all postulantenable
-Route::get('postulantenable', 'PostulantEnableController@getAll')->name('getAllPostulantEnable');
->>>>>>> cambios en ruta y en controladores
