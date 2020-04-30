@@ -50,4 +50,5 @@ Route::post('postulantEnable/{id}', 'PostulantEnableController@edit')->name('edi
 //delete
 Route::get('postulantEnable/delete/{id}', 'PostulantEnableController@delete')->name('deletePostulantEnable');
 
-
+//REQUIREMENTCONV//
+Route::post('requirement', 'RequirementConvController@add')->name ('addRequirement');
