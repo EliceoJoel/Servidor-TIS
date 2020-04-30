@@ -37,3 +37,6 @@ Route::post('announcement', 'AnnouncementController@add')->name ('addAnnouncemen
 Route::get('announcement', 'AnnouncementController@getAll')->name('getAllAnnouncement');
 //get one
 Route::get('announcement/{id}', 'AnnouncementController@get')->name('getAnnouncement');
+
+//REQUIREMENTCONV//
+Route::post('requirement', 'RequirementConvController@add')->name ('addRequirement');
