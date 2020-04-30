@@ -38,7 +38,6 @@ Route::get('announcement', 'AnnouncementController@getAll')->name('getAllAnnounc
 //get one
 Route::get('announcement/{id}', 'AnnouncementController@get')->name('getAnnouncement');
 
-<<<<<<< HEAD
 
 //POSTULANTENABLE//
 Route::get('postulantEnable', 'PostulantEnableController@getAll')->name('getAllPostulantEnable');
@@ -51,7 +50,5 @@ Route::post('postulantEnable/{id}', 'PostulantEnableController@edit')->name('edi
 //delete
 Route::get('postulantEnable/delete/{id}', 'PostulantEnableController@delete')->name('deletePostulantEnable');
 
-=======
->>>>>>> b2821f4600177af89582ad3c0c7801fe8ed955a6
 //REQUIREMENTCONV//
 Route::post('requirement', 'RequirementConvController@add')->name ('addRequirement');
