@@ -52,3 +52,14 @@ Route::get('postulantEnable/delete/{id}', 'PostulantEnableController@delete')->n
 
 //REQUIREMENTCONV//
 Route::post('requirement', 'RequirementConvController@add')->name ('addRequirement');
+
+//REGISTER BOOK//
+Route::get('registerBook', 'RegisterBookController@getAll')->name('getAllRegisterBook');
+//post
+Route::post('registerBook','RegisterBookController@add')->name('addRegisterBook');
+//get one
+Route::get('registerBook/{id}', 'RegisterBookController@get')->name('getRegisterBook');
+//edit/put
+Route::post('registerBook/{id}', 'RegisterBookController@edit')->name('editRegisterBook');
+//delete
+Route::get('registerBook/delete/{id}', 'RegisterBookController@delete')->name('deleteRegisterBook');
