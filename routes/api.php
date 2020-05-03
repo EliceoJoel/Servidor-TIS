@@ -54,6 +54,8 @@ Route::get('announcement/{id}', 'AnnouncementController@get')->name('getAnnounce
 //REQUIREMENTCONV//
 Route::post('requirement', 'RequirementConvController@add')->name ('addRequirement');
 
+Route::post('requirementList','RequirementConvController@getReq')->name('getRequirement');
+
 //REGISTER BOOK//
 Route::get('registerBook', 'RegisterBookController@getAll')->name('getAllRegisterBook');
 //post
@@ -64,9 +66,18 @@ Route::get('registerBook/{id}', 'RegisterBookController@get')->name('getRegister
 Route::post('registerBook/{id}', 'RegisterBookController@edit')->name('editRegisterBook');
 //delete
 Route::get('registerBook/delete/{id}', 'RegisterBookController@delete')->name('deleteRegisterBook');
+//para habilitar postulante
+Route::get('registerBookEnable', 'RegisterBookController@getPostulant')->name('getPostulant');
+//post
+Route::post('registerBookEnable','RegisterBookController@verify')->name('verifyPostulant');
 
 //POSTULANTENABLE//
 //post postulantenable
 Route::post('postulantenable', 'PostulantEnableController@add')->name ('addPostulantEnable');
 //get all postulantenable
 Route::get('postulantenable', 'PostulantEnableController@getAll')->name('getAllPostulantEnable');
+
+//IMPORTANTDATE//
+Route::post('importantDate', 'ImportantDateController@add')->name ('addImportantDate');
+//get all postulantenable
+Route::get('importantDate', 'ImportantDateController@getAll')->name('getAllImportantDate');
