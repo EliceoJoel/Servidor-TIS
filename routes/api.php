@@ -41,16 +41,16 @@ Route::get('announcement/{id}', 'AnnouncementController@get')->name('getAnnounce
 
 
 
-// //POSTULANTENABLE//
-// Route::get('postulantEnable', 'PostulantEnableController@getAll')->name('getAllPostulantEnable');
-// //post
-// Route::post('postulantEnable','PostulantEnableController@add')->name('addPostulantEnable');
-// //get one
-// Route::get('postulantEnable/{id}', 'PostulantEnableController@get')->name('getPostulantEnable');
-// //edit/put
-// Route::post('postulantEnable/{id}', 'PostulantEnableController@edit')->name('editPostulantEnable');
-// //delete
-// Route::get('postulantEnable/delete/{id}', 'PostulantEnableController@delete')->name('deletePostulantEnable');
+//POSTULANTENABLE//
+Route::get('postulantEnable', 'PostulantEnableController@getAll')->name('getAllPostulantEnable');
+//post
+Route::post('postulantEnable','PostulantEnableController@add')->name('addPostulantEnable');
+//get one
+Route::get('postulantEnable/{id}', 'PostulantEnableController@get')->name('getPostulantEnable');
+//edit/put
+Route::post('postulantEnable/{id}', 'PostulantEnableController@edit')->name('editPostulantEnable');
+//delete
+Route::get('postulantEnable/delete/{id}', 'PostulantEnableController@delete')->name('deletePostulantEnable');
 
 //REQUIREMENTCONV//
 Route::post('requirement', 'RequirementConvController@add')->name ('addRequirement');
@@ -83,11 +83,8 @@ Route::post('importantDate', 'ImportantDateController@add')->name ('addImportant
 //get all postulantenable
 Route::get('importantDate', 'ImportantDateController@getAll')->name('getAllImportantDate');
 
-<<<<<<< HEAD
-//POSTULANTENABLE//
-//post postulantenable
-Route::post('postulantenable', 'PostulantEnableController@add')->name ('addPostulantEnable');
-//get all postulantenable
-Route::get('postulantenable', 'PostulantEnableController@getAll')->name('getAllPostulantEnable');
-=======
->>>>>>> postulantcontroller aumentando funciones
+// //POSTULANTENABLE//
+// //post postulantenable
+// Route::post('postulantenable', 'PostulantEnableController@add')->name ('addPostulantEnable');
+// //get all postulantenable
+// Route::get('postulantenable', 'PostulantEnableController@getAll')->name('getAllPostulantEnable');
