@@ -33,4 +33,19 @@ class RegisterBookController extends Controller
         $registerBook->delete();
         return $registerBook;
     }
+
+
+
+    public function verify(Request $request){
+        
+       // $registerBook = RegisterBook::create($request->all());
+
+        $CodigoSys = $request->codSis;
+        $Convocatoria = $request->conv;
+        $postulantEnable = RegisterBook::where('sis_code', '=', $CodigoSys)->where('announcement','=',$Convocatoria)
+        ->get();
+
+        return $postulantEnable;
+    }
+
 }
