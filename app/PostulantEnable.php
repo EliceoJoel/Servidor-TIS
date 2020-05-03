@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class PostulantEnable extends Model
 {
     protected $table = 'postulantEnable';
-    protected $fillable = ['sis_code', 'auxiliary', 'announcement', 'enable', 'reason'];
+    protected $fillable = ['name', 'auxiliary', 'announcement', 'enable', 'reason'];
 }
