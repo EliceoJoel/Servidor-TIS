@@ -12,4 +12,14 @@ class RequirementConvController extends Controller
         return $requirementConv;
     }
     
+    public function getReq(Request $request){
+        
+     
+ 
+         $Convocatoria = $request->conv;
+         $postulantReq = RequirementConv::where('name_announcement','=',$Convocatoria)
+         ->get();
+ 
+         return $postulantReq;
+     }
 }

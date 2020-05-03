@@ -29,7 +29,7 @@ Route::get('postulant/{id}', 'PostulantController@get')->name('getPostulant');
 Route::post('postulant/{id}', 'PostulantController@edit')->name('editPostulant');
 //delete
 Route::get('postulant/delete/{id}', 'PostulantController@delete')->name('deletePostulant');
-
+//ANNOUNCEMENT//
 
 //post/announcement
 Route::post('announcement', 'AnnouncementController@add')->name ('addAnnouncement');
@@ -37,6 +37,8 @@ Route::post('announcement', 'AnnouncementController@add')->name ('addAnnouncemen
 Route::get('announcement', 'AnnouncementController@getAll')->name('getAllAnnouncement');
 //get one
 Route::get('announcement/{id}', 'AnnouncementController@get')->name('getAnnouncement');
+
+
 
 
 //POSTULANTENABLE//
@@ -53,6 +55,8 @@ Route::get('postulantEnable/delete/{id}', 'PostulantEnableController@delete')->n
 //REQUIREMENTCONV//
 Route::post('requirement', 'RequirementConvController@add')->name ('addRequirement');
 
+Route::post('requirementList','RequirementConvController@getReq')->name('getRequirement');
+
 //REGISTER BOOK//
 Route::get('registerBook', 'RegisterBookController@getAll')->name('getAllRegisterBook');
 //post
@@ -63,3 +67,24 @@ Route::get('registerBook/{id}', 'RegisterBookController@get')->name('getRegister
 Route::post('registerBook/{id}', 'RegisterBookController@edit')->name('editRegisterBook');
 //delete
 Route::get('registerBook/delete/{id}', 'RegisterBookController@delete')->name('deleteRegisterBook');
+//para habilitar postulante
+Route::get('registerBookEnable', 'RegisterBookController@getPostulant')->name('getPostulant');
+//post
+Route::post('registerBookEnable','RegisterBookController@verify')->name('verifyPostulant');
+
+//POSTULANTENABLE//
+//post postulantenable
+Route::post('postulantenable', 'PostulantEnableController@add')->name ('addPostulantEnable');
+//get all postulantenable
+Route::get('postulantenable', 'PostulantEnableController@getAll')->name('getAllPostulantEnable');
+
+//IMPORTANTDATE//
+Route::post('importantDate', 'ImportantDateController@add')->name ('addImportantDate');
+//get all postulantenable
+Route::get('importantDate', 'ImportantDateController@getAll')->name('getAllImportantDate');
+
+// //POSTULANTENABLE//
+// //post postulantenable
+// Route::post('postulantenable', 'PostulantEnableController@add')->name ('addPostulantEnable');
+// //get all postulantenable
+// Route::get('postulantenable', 'PostulantEnableController@getAll')->name('getAllPostulantEnable');
