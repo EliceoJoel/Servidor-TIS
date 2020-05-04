@@ -88,3 +88,15 @@ Route::get('importantDate', 'ImportantDateController@getAll')->name('getAllImpor
 // Route::post('postulantenable', 'PostulantEnableController@add')->name ('addPostulantEnable');
 // //get all postulantenable
 // Route::get('postulantenable', 'PostulantEnableController@getAll')->name('getAllPostulantEnable');
+
+// POSTULANT SCORE//
+
+Route::get('postulantScore', 'postulantScoreController@getAll')->name('getAllScores');
+
+//update score
+Route::post('update/{id}', 'postulantScoreController@edit')->name('updateScore');
+//USER FUNCTIONS//
+//get postulant with scores//
+Route::get('students', 'UserController@getStudentsScores')->name('getAllStudents');
+
+
