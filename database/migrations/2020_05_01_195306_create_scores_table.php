@@ -16,6 +16,7 @@ class CreateScoresTable extends Migration
         Schema::create('scores',function (Blueprint $table) {
             $table->integer('id');
             $table->integer('score');
+            $table->integer('oralScores');
         });
     }
 
