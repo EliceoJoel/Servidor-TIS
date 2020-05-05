@@ -15,9 +15,10 @@ class CreatePostulantScoresTable extends Migration
     {
         Schema::create('postulant_scores', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_postulant');
+            $table->string('id_postulant');
             $table->integer('score');
             $table->integer('score_oral');
+            $table->timestamps();
         });
     }
 

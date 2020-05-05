@@ -22,14 +22,8 @@ class postulantScoreController extends Controller
         [$score,$score_oral,$id]);
     }
 
-    public function score(Request $request){
-        $score = $request->get('id_postulant');
-        $score = $request->get('score');
-        $score_oral = $request->get('score_oral');
-        $results = DB::update('
-        update "postulant_scores" 
-        set score=? , score_oral=? 
-        where id_postulant = ?', 
-        [$score,$score_oral,$id]);
+    public function add(Request $request){
+        $postulantScore = postulantScore::create($request->all());
+        return $postulantScore;
     }
 }
