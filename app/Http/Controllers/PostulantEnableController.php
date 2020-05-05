@@ -18,7 +18,6 @@ class PostulantEnableController extends Controller
      }
     // public function add(Request $request){
     //     $nombre= $request->name;
-    //     //  update "postulantEnable" 
     //     $convocatoria= $request->announcement;
     //     $auxiliatura= $request->auxiliary;
     //     if(){
