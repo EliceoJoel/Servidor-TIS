@@ -11,11 +11,26 @@ class PostulantEnableController extends Controller
         $postulantEnable = PostulantEnable::all();
         return $postulantEnable;
     }
-
+    
     public function add(Request $request){
         $postulantEnable = PostulantEnable::create($request->all());
         return $postulantEnable;
-    }
+     }
+    // public function add(Request $request){
+    //     $nombre= $request->name;
+    //     //  update "postulantEnable" 
+    //     $convocatoria= $request->announcement;
+    //     $auxiliatura= $request->auxiliary;
+    //     if(){
+    //         $actualizacion = PostulantEnable::update('
+    //             set enable=? , reason=? ', 
+    //         [$enable,$reason]);
+    //     }else{
+    //           $postulantEnable = PostulantEnable::create($request->all());
+    //     }
+      
+    //     return $postulantEnable;
+    // }
 
     public function get($id){
         $postulantEnable = PostulantEnable::find($id);
