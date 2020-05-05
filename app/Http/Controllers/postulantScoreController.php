@@ -21,4 +21,9 @@ class postulantScoreController extends Controller
         where id_postulant = ?', 
         [$score,$score_oral,$id]);
     }
+
+    public function add(Request $request){
+        $postulantScore = postulantScore::create($request->all());
+        return $postulantScore;
+    }
 }

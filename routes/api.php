@@ -95,6 +95,8 @@ Route::get('postulantScore', 'postulantScoreController@getAll')->name('getAllSco
 
 //update score
 Route::post('update/{id}', 'postulantScoreController@edit')->name('updateScore');
+
+Route::post('add', 'postulantScoreController@add')->name('addScore');
 //USER FUNCTIONS//
 //get postulant with scores//
 Route::get('students', 'UserController@getStudentsScores')->name('getAllStudents');
