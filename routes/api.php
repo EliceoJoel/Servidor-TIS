@@ -101,4 +101,31 @@ Route::post('add', 'postulantScoreController@add')->name('addScore');
 //get postulant with scores//
 Route::get('students', 'UserController@getStudentsScores')->name('getAllStudents');
 
+//AUXILIARY//
+
+//get all
+Route::get('auxiliary', 'AuxiliaryController@getAll')->name('getAllAuxiliary');
+//post
+Route::post('auxiliary','AuxiliaryController@add')->name('addAuxiliary');
+//get one
+Route::get('auxiliary/{id}', 'AuxiliaryController@get')->name('getAuxiliary');
+
+//THEMEAUXILIARY//
+
+//get all
+Route::get('themeAuxiliary', 'ThemeAuxiliaryController@getAll')->name('getAllThemeAuxiliary');
+//post
+Route::post('themeAuxiliary','ThemeAuxiliaryController@add')->name('addThemeAuxiliary');
+//get one
+Route::get('themeAuxiliary/{id}', 'ThemeAuxiliaryController@get')->name('getThemeAuxiliary');
+
+//PERCENTAGEAUXILIARY//
+
+//get all
+Route::get('percentageAuxiliary', 'PercentageAuxiliaryController@getAll')->name('getAllPercentageAuxiliary');
+//post
+Route::post('percentageAuxiliary','PercentageAuxiliaryController@add')->name('addPercentageAuxiliary');
+//get one
+Route::get('percentageAuxiliary/{id}', 'PercentageAuxiliaryController@get')->name('getPercentageAuxiliary');
+
 
