@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use App\User;
 
 class UserController extends Controller
 {
@@ -23,6 +25,36 @@ class UserController extends Controller
         where id_postulant = ?', 
         [22,45,2]);
         return $id;
+    }
+
+    public function getAll(){
+        $user = User::all();
+        return $user;
+    }
+
+    public function add(Request $request){
+        $request->request->add([
+            'password' => Hash::make($request->input('password'))
+        ]);
+        $user = User::create($request->all());
+        return $user;
+    }
+
+    public function get($id){
+        $user = User::find($id);
+        return $user;
+    }
+
+    public function edit($id, Request $request){
+        $user =$this->get($id);
+        $user->fill($request->all())->save();
+        return $user;
+    }
+
+    public function delete($id){
+        $user = $this->get($id);
+        $user->delete();
+        return $user;
     }
 
 }

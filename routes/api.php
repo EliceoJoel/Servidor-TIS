@@ -97,9 +97,21 @@ Route::get('postulantScore', 'postulantScoreController@getAll')->name('getAllSco
 Route::post('update/{id}', 'postulantScoreController@edit')->name('updateScore');
 
 Route::post('add', 'postulantScoreController@add')->name('addScore');
+
+
 //USER FUNCTIONS//
 //get postulant with scores//
 Route::get('students', 'UserController@getStudentsScores')->name('getAllStudents');
+//get all
+Route::get('user', 'UserController@getAll')->name('getAllPermission');
+//post
+Route::post('user','UserController@add')->name('addUser');
+//get one
+Route::get('user/{id}', 'UserController@get')->name('getUser');
+//edit/put
+Route::post('user/{id}', 'UserController@edit')->name('editUser');
+//delete
+Route::get('user/delete/{id}', 'UserController@delete')->name('deleteUser');
 
 //AUXILIARY//
 
@@ -127,5 +139,33 @@ Route::get('percentageAuxiliary', 'PercentageAuxiliaryController@getAll')->name(
 Route::post('percentageAuxiliary','PercentageAuxiliaryController@add')->name('addPercentageAuxiliary');
 //get one
 Route::get('percentageAuxiliary/{id}', 'PercentageAuxiliaryController@get')->name('getPercentageAuxiliary');
+
+//ROL//
+//get all
+Route::get('rol', 'RolController@getAll')->name('getAllRol');
+//post
+Route::post('rol','RolController@add')->name('addRol');
+//get one
+Route::get('rol/{id}', 'RolController@get')->name('getRol');
+//edit/put
+Route::post('rol/{id}', 'RolController@edit')->name('editRol');
+//delete
+Route::get('rol/delete/{id}', 'RolController@delete')->name('deleteRol');
+
+//PERMISSION//
+//get all
+Route::get('permission', 'PermissionController@getAll')->name('getAllPermission');
+//post
+Route::post('permission','PermissionController@add')->name('addPermission');
+//get one
+Route::get('permission/{id}', 'PermissionController@get')->name('getPermission');
+//edit/put
+Route::post('permission/{id}', 'PermissionController@edit')->name('editPermission');
+//delete
+Route::get('permission/delete/{id}', 'PermissionController@delete')->name('deletePermission');
+
+
+
+
 
 
