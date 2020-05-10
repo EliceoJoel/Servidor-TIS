@@ -21,6 +21,7 @@ class CreateUserTable extends Migration
             $table->string('user',50);
             $table->string('password',60);
             $table->integer('announcement');
+            $table->boolean('logged');
             $table->timestamps();
         });
     }
