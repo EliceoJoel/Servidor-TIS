@@ -13,6 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::post('register', 'UserController@register');
+Route::post('login', 'UserController@login');
+Route::get('profile', 'UserController@getAuthenticatedUser');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
@@ -159,6 +163,8 @@ Route::get('permission', 'PermissionController@getAll')->name('getAllPermission'
 Route::post('permission','PermissionController@add')->name('addPermission');
 //get one
 Route::get('permission/{id}', 'PermissionController@get')->name('getPermission');
+//get by idRol
+Route::get('permission/rol/{idRol}', 'PermissionController@getByRol')->name('getPermissionByRol');
 //edit/put
 Route::post('permission/{id}', 'PermissionController@edit')->name('editPermission');
 //delete

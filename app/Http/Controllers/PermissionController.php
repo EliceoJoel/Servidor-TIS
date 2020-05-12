@@ -22,6 +22,11 @@ class PermissionController extends Controller
         return $permission;
     }
 
+    public function getByRol($idRol){
+        $permission = Permission::whereIn('idRol', [$idRol])->get();
+        return $permission;
+    }
+
     public function edit($id, Request $request){
         $permission =$this->get($id);
         $permission->fill($request->all())->save();
