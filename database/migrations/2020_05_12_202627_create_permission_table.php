@@ -17,6 +17,7 @@ class CreatePermissionTable extends Migration
             $table->increments('id');
             $table->string('permission');
             $table->integer('idRol');
+            $table->string('route');
             $table->timestamps();
         });
     }
