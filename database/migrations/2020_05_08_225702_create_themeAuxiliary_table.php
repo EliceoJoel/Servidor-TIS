@@ -15,6 +15,7 @@ class CreateThemeAuxiliaryTable extends Migration
     {
         Schema::create('themeAuxiliary', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('id_announcement');
             $table->string('name');
             $table->timestamps();
         });

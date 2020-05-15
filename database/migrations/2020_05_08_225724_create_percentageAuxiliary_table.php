@@ -15,8 +15,11 @@ class CreatePercentageAuxiliaryTable extends Migration
     {
         Schema::create('percentageAuxiliary', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_auxiliary');
-            $table->integer('id_theme');
+           //  $table->integer('id_auxiliary');
+           // $table->integer('id_theme');
+            $table->integer('id_announcement');
+            $table->string('auxiliary');
+            $table->string('theme');
             $table->integer('percentage');
             $table->timestamps();
         });

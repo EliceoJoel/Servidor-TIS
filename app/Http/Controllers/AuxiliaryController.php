@@ -21,4 +21,16 @@ class AuxiliaryController extends Controller
         $auxiliary = Auxiliary::find($id);
         return $auxiliary;
     }
+     
+    public function search(Request $request){
+        
+        // $registerBook = RegisterBook::create($request->all());
+ 
+         
+         $announcement = $request->id_announcement;
+         $auxiliary = Auxiliary::where('id_announcement','=',$announcement)
+         ->get();
+ 
+         return $auxiliary;
+     }
 }

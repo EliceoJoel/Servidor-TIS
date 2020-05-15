@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class ThemeAuxiliary extends Model
 {
     protected $table = 'themeAuxiliary';
-    protected $fillable = ['name'];
+    protected $fillable = ['id_announcement','name'];
 }

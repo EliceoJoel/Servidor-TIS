@@ -21,4 +21,16 @@ class ThemeAuxiliaryController extends Controller
         $themeAuxiliary = ThemeAuxiliary::find($id);
         return $themeAuxiliary;
     }
+     
+    public function search(Request $request){
+        
+        // $registerBook = RegisterBook::create($request->all());
+ 
+         
+         $announcement = $request->id_announcement;
+         $themeAuxiliary = ThemeAuxiliary::where('id_announcement','=',$announcement)
+         ->get();
+ 
+         return $themeAuxiliary;
+     }
 }

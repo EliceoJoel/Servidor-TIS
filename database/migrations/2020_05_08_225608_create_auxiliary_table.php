@@ -16,6 +16,7 @@ class CreateAuxiliaryTable extends Migration
         Schema::create('auxiliary', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_announcement');
+            $table->string('item');
             $table->string('name');
             $table->timestamps();
         });
