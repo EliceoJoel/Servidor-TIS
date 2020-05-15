@@ -41,6 +41,9 @@ Route::post('announcement', 'AnnouncementController@add')->name ('addAnnouncemen
 Route::get('announcement', 'AnnouncementController@getAll')->name('getAllAnnouncement');
 //get one
 Route::get('announcement/{id}', 'AnnouncementController@get')->name('getAnnouncement');
+//announcementsearch
+Route::post('announcementSearch', 'AnnouncementController@search')->name ('searchAnnouncement');
+
 
 
 
@@ -125,6 +128,8 @@ Route::get('auxiliary', 'AuxiliaryController@getAll')->name('getAllAuxiliary');
 Route::post('auxiliary','AuxiliaryController@add')->name('addAuxiliary');
 //get one
 Route::get('auxiliary/{id}', 'AuxiliaryController@get')->name('getAuxiliary');
+//post get auxiliary de una convocatoria
+Route::post('auxiliarySearch','AuxiliaryController@search')->name('searchAuxiliary');
 
 //THEMEAUXILIARY//
 
@@ -134,6 +139,8 @@ Route::get('themeAuxiliary', 'ThemeAuxiliaryController@getAll')->name('getAllThe
 Route::post('themeAuxiliary','ThemeAuxiliaryController@add')->name('addThemeAuxiliary');
 //get one
 Route::get('themeAuxiliary/{id}', 'ThemeAuxiliaryController@get')->name('getThemeAuxiliary');
+//post get theme de una convocatoria
+Route::post('themeAuxiliarySearch','ThemeAuxiliaryController@search')->name('searchThemeAuxiliary');
 
 //PERCENTAGEAUXILIARY//
 
