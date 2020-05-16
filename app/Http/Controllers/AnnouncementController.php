@@ -23,4 +23,16 @@ class AnnouncementController extends Controller
         $announcement = Announcement::find($id);
         return $announcement;
     }
+    
+    public function search(Request $request){
+        
+        // $registerBook = RegisterBook::create($request->all());
+ 
+         
+         $Convocatoria = $request->conv;
+         $announcement = Announcement::where('name','=',$Convocatoria)
+         ->get();
+ 
+         return $announcement;
+     }
 }
