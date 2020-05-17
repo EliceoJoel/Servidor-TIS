@@ -151,6 +151,8 @@ Route::get('percentageAuxiliary', 'PercentageAuxiliaryController@getAll')->name(
 Route::post('percentageAuxiliary','PercentageAuxiliaryController@add')->name('addPercentageAuxiliary');
 //get one
 Route::get('percentageAuxiliary/{id}', 'PercentageAuxiliaryController@get')->name('getPercentageAuxiliary');
+//get by announement
+Route::post('percentageAuxiliaryAnnouncement','PercentageAuxiliaryController@getByAnnouncement')->name('getByAnnouncementPercentageAuxiliary');
 
 //ROL//
 //get all
