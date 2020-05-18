@@ -111,6 +111,9 @@ Route::post('update/{id}', 'postulantScoreController@edit')->name('updateScore')
 
 Route::post('add', 'postulantScoreController@add')->name('addScore');
 
+Route::post('labScore', 'labScoreController@add')->name('addLabScore');
+
+
 
 //USER FUNCTIONS//
 //get postulant with scores//
