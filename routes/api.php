@@ -19,8 +19,8 @@ Route::get('profile', 'UserController@getAuthenticatedUser');
 Route::post('userAnnouncement','UserAnnouncementController@saveAnnouncement')->name('addAnnouncementToUser');
 
 //FUNCTIONS//
-Route::get('studentsData', 'functionsController@getStudents')->name('getStudent');
-Route::get('percentageData', 'functionsController@getPercentage')->name('getPercentage');
+Route::post('studentsData', 'functionsController@getStudents')->name('getStudent');
+Route::post('percentageData', 'functionsController@getPercentage')->name('getPercentage');
 
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
