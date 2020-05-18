@@ -28,4 +28,14 @@ class functionsController extends Controller
         [$auxiliary, $announcement]);
         return $percentageAuxiliary;
     }
+
+    public function getAnnouncements($id){
+        $announcement = DB::select('
+        select announcement.*
+        from announcement,user_announcement
+        where   announcement.id = user_announcement."idAnnouncement" 
+        and user_announcement."idUser" = ?', 
+        [$id]);
+        return $announcement;
+    }
 }

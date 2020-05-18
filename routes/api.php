@@ -128,6 +128,9 @@ Route::get('user/{id}', 'UserController@get')->name('getUser');
 Route::post('user/{id}', 'UserController@edit')->name('editUser');
 //delete
 Route::get('user/delete/{id}', 'UserController@delete')->name('deleteUser');
+//get announcements
+Route::get('userAnnouncement/{id}', 'functionsController@getAnnouncements')->name('getUserAnnouncement');
+
 
 //AUXILIARY//
 
