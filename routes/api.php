@@ -17,6 +17,11 @@ Route::post('register', 'UserController@register');
 Route::post('login', 'UserController@login');
 Route::get('profile', 'UserController@getAuthenticatedUser');
 
+//FUNCTIONS//
+Route::get('studentsData', 'functionsController@getStudents')->name('getStudent');
+Route::get('percentageData', 'functionsController@getPercentage')->name('getPercentage');
+
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
