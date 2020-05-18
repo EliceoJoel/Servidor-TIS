@@ -16,6 +16,7 @@ use Illuminate\Http\Request;
 Route::post('register', 'UserController@register');
 Route::post('login', 'UserController@login');
 Route::get('profile', 'UserController@getAuthenticatedUser');
+Route::post('userAnnouncement','UserAnnouncementController@saveAnnouncement')->name('addAnnouncementToUser');
 
 //FUNCTIONS//
 Route::get('studentsData', 'functionsController@getStudents')->name('getStudent');
@@ -155,6 +156,8 @@ Route::get('percentageAuxiliary', 'PercentageAuxiliaryController@getAll')->name(
 Route::post('percentageAuxiliary','PercentageAuxiliaryController@add')->name('addPercentageAuxiliary');
 //get one
 Route::get('percentageAuxiliary/{id}', 'PercentageAuxiliaryController@get')->name('getPercentageAuxiliary');
+//get by announement
+Route::post('percentageAuxiliaryAnnouncement','PercentageAuxiliaryController@getByAnnouncement')->name('getByAnnouncementPercentageAuxiliary');
 
 //ROL//
 //get all
