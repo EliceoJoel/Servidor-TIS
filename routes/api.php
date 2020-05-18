@@ -153,7 +153,8 @@ Route::post('percentageAuxiliary','PercentageAuxiliaryController@add')->name('ad
 Route::get('percentageAuxiliary/{id}', 'PercentageAuxiliaryController@get')->name('getPercentageAuxiliary');
 //get by announement
 Route::post('percentageAuxiliaryAnnouncement','PercentageAuxiliaryController@getByAnnouncement')->name('getByAnnouncementPercentageAuxiliary');
-
+//delete one percentage by id
+Route::post('percentageAuxiliaryDelete','PercentageAuxiliaryController@delete')->name('deletePercentageAuxiliary');
 //ROL//
 //get all
 Route::get('rol', 'RolController@getAll')->name('getAllRol');
