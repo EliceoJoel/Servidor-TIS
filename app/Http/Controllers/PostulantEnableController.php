@@ -12,24 +12,34 @@ class PostulantEnableController extends Controller
         return $postulantEnable;
     }
     
-    public function add(Request $request){
-        $postulantEnable = PostulantEnable::create($request->all());
-        return $postulantEnable;
-     }
     // public function add(Request $request){
-    //     $nombre= $request->name;
-    //     $convocatoria= $request->announcement;
-    //     $auxiliatura= $request->auxiliary;
-    //     if(){
-    //         $actualizacion = PostulantEnable::update('
-    //             set enable=? , reason=? ', 
-    //         [$enable,$reason]);
-    //     }else{
-    //           $postulantEnable = PostulantEnable::create($request->all());
-    //     }
-      
+    //     $postulantEnable = PostulantEnable::create($request->all());
     //     return $postulantEnable;
-    // }
+    //  }
+    public function add(Request $request){
+        $nombre= $request->name;
+        $convocatoria= $request->announcement;
+        $auxiliatura= $request->auxiliary;
+        $habilitado = $request->enable;
+        $motivo = $request->reason;
+        $consulta = PostulantEnable::where('name','=',$nombre)
+        ->where('auxiliary', '=', $auxiliatura)
+        ->where('announcement', '=', $convocatoria)
+        ->get();
+        if ($consulta->isEmpty()) {
+            $postulantEnable = PostulantEnable::create($request->all());
+           } else {
+         
+            $postulantEnable = PostulantEnable::where('name','=',$nombre)
+                                                         ->where('auxiliary', '=', $auxiliatura)
+                                                        ->where('announcement', '=', $convocatoria)
+                                                         ->update(['enable' => $habilitado , 'reason' => $motivo]);
+          
+                                                        
+         }  return $postulantEnable;
+      
+      
+     }
 
     public function get($id){
         $postulantEnable = PostulantEnable::find($id);
