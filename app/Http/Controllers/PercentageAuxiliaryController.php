@@ -98,5 +98,11 @@ class PercentageAuxiliaryController extends Controller
         $percentageAuxiliary = PercentageAuxiliary::find($id);
         return $percentageAuxiliary;
     }
+    public function delete(Request $request){
+        $percentageId = $request->id_percentage;
+        $deletePercentage = PercentageAuxiliary::where('id','=',$percentageId)->delete();
+
+        return $deletePercentage;
+    }
     
 }

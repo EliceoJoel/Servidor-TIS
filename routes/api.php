@@ -18,6 +18,11 @@ Route::post('login', 'UserController@login');
 Route::get('profile', 'UserController@getAuthenticatedUser');
 Route::post('userAnnouncement','UserAnnouncementController@saveAnnouncement')->name('addAnnouncementToUser');
 
+//FUNCTIONS//
+Route::post('studentsData', 'functionsController@getStudents')->name('getStudent');
+Route::post('percentageData', 'functionsController@getPercentage')->name('getPercentage');
+
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
@@ -106,6 +111,9 @@ Route::post('update/{id}', 'postulantScoreController@edit')->name('updateScore')
 
 Route::post('add', 'postulantScoreController@add')->name('addScore');
 
+Route::post('labScore', 'labScoreController@add')->name('addLabScore');
+
+
 
 //USER FUNCTIONS//
 //get postulant with scores//
@@ -120,6 +128,9 @@ Route::get('user/{id}', 'UserController@get')->name('getUser');
 Route::post('user/{id}', 'UserController@edit')->name('editUser');
 //delete
 Route::get('user/delete/{id}', 'UserController@delete')->name('deleteUser');
+//get announcements
+Route::get('userAnnouncement/{id}', 'functionsController@getAnnouncements')->name('getUserAnnouncement');
+
 
 //AUXILIARY//
 
@@ -153,7 +164,8 @@ Route::post('percentageAuxiliary','PercentageAuxiliaryController@add')->name('ad
 Route::get('percentageAuxiliary/{id}', 'PercentageAuxiliaryController@get')->name('getPercentageAuxiliary');
 //get by announement
 Route::post('percentageAuxiliaryAnnouncement','PercentageAuxiliaryController@getByAnnouncement')->name('getByAnnouncementPercentageAuxiliary');
-
+//delete one percentage by id
+Route::post('percentageAuxiliaryDelete','PercentageAuxiliaryController@delete')->name('deletePercentageAuxiliary');
 //ROL//
 //get all
 Route::get('rol', 'RolController@getAll')->name('getAllRol');
