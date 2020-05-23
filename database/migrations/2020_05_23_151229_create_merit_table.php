@@ -16,6 +16,7 @@ class CreateMeritTable extends Migration
         Schema::create('merit', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_announcement');
+            $table->string('name_announcement');
             $table->string('name');
             $table->string('description')->nullable();
             $table->integer('percentage')->nullable();
