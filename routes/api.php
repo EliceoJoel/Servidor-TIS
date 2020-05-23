@@ -155,6 +155,16 @@ Route::post('themeAuxiliary','ThemeAuxiliaryController@add')->name('addThemeAuxi
 Route::get('themeAuxiliary/{id}', 'ThemeAuxiliaryController@get')->name('getThemeAuxiliary');
 //post get theme de una convocatoria
 Route::post('themeAuxiliarySearch','ThemeAuxiliaryController@search')->name('searchThemeAuxiliary');
+//MERIT//
+
+//get all
+Route::get('merit', 'MeritController@getAll')->name('getAllMerit');
+//post
+Route::post('merit','MeritController@add')->name('addMerit');
+//get one
+Route::get('merit/{id}', 'MeritController@get')->name('getMerit');
+//post get theme de una convocatoria
+Route::post('meritSearch','MeritController@search')->name('searchMerit');
 
 //PERCENTAGEAUXILIARY//
 
