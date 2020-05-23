@@ -17,8 +17,8 @@ class CreatePostulantEnableTable extends Migration
             $table->increments('id');
             $table->string('id_book');
             $table->string('name', 150);
-            $table->string('auxiliary', 50);
-            $table->string('announcement', 50);
+            $table->string('auxiliary');
+            $table->string('announcement');
             $table->boolean('enable');
             $table->string('reason')->nullable();
             $table->timestamps();

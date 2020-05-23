@@ -57,4 +57,9 @@ class PostulantEnableController extends Controller
         $postulantEnable->delete();
         return $postulantEnable;
     }
+
+    public function getByTrue(){
+        $postulantEnable = PostulantEnable::where("enable","=",true)->get();
+        return $postulantEnable;
+    }
 }

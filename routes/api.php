@@ -90,6 +90,8 @@ Route::post('registerBookEnable','RegisterBookController@verify')->name('verifyP
 Route::post('postulantenable', 'PostulantEnableController@add')->name ('addPostulantEnable');
 //get all postulantenable
 Route::get('postulantenable', 'PostulantEnableController@getAll')->name('getAllPostulantEnable');
+//get by enable=true
+Route::get('enablePostulant', 'PostulantEnableController@getbyTrue')->name('getPostulantEnable');
 
 //IMPORTANTDATE//
 Route::post('importantDate', 'ImportantDateController@add')->name ('addImportantDate');
