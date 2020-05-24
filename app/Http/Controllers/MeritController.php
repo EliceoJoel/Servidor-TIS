@@ -33,4 +33,9 @@ class MeritController extends Controller
  
          return $merit;
      }
+
+     public function getByNameAnnouncement($name){
+        $merit = Merit::where("name_announcement","=",$name)->get();
+        return $merit;
+    }
 }
