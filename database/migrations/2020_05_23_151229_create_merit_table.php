@@ -19,7 +19,9 @@ class CreateMeritTable extends Migration
             $table->string('name_announcement');
             $table->string('name');
             $table->string('description')->nullable();
-            $table->integer('percentage')->nullable();
+            $table->string('type')->nullable();
+            $table->integer('number')->nullable();
+        
             $table->timestamps();
         });
     }

@@ -165,6 +165,8 @@ Route::post('merit','MeritController@add')->name('addMerit');
 Route::get('merit/{id}', 'MeritController@get')->name('getMerit');
 //post get theme de una convocatoria
 Route::post('meritSearch','MeritController@search')->name('searchMerit');
+//update the porcentage and type
+Route::post('meritUpdate','MeritController@update')->name('updateMerit');
 
 //PERCENTAGEAUXILIARY//
 
