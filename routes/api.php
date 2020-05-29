@@ -155,6 +155,7 @@ Route::post('themeAuxiliary','ThemeAuxiliaryController@add')->name('addThemeAuxi
 Route::get('themeAuxiliary/{id}', 'ThemeAuxiliaryController@get')->name('getThemeAuxiliary');
 //post get theme de una convocatoria
 Route::post('themeAuxiliarySearch','ThemeAuxiliaryController@search')->name('searchThemeAuxiliary');
+
 //MERIT//
 
 //get all
@@ -167,6 +168,8 @@ Route::get('merit/{id}', 'MeritController@get')->name('getMerit');
 Route::post('meritSearch','MeritController@search')->name('searchMerit');
 //update the porcentage and type
 Route::post('meritUpdate','MeritController@update')->name('updateMerit');
+//get por nombre de convocatoria
+Route::get('getMerit/{name}', 'MeritController@getByNameAnnouncement')->name('getMeritByNameAnnouncement');
 
 //PERCENTAGEAUXILIARY//
 
@@ -205,6 +208,10 @@ Route::get('permission/rol/{idRol}', 'PermissionController@getByRol')->name('get
 Route::post('permission/{id}', 'PermissionController@edit')->name('editPermission');
 //delete
 Route::get('permission/delete/{id}', 'PermissionController@delete')->name('deletePermission');
+
+//Meritos Register//
+//post
+Route::post('meritosRegister', 'MeritosRegisterController@add')->name('addmeritosPermision');
 
 
 

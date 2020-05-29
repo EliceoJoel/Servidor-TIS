@@ -33,7 +33,7 @@ class MeritController extends Controller
  
          return $merit;
      }
-     public function update(Request $request){
+    public function update(Request $request){
          $idConv = $request->id_announcement;
          $nameConv = $request->name_announcement;
          $nameMerit = $request->name;
@@ -48,4 +48,9 @@ class MeritController extends Controller
        
     }
     
+
+     public function getByNameAnnouncement($name){
+        $merit = Merit::where("name_announcement","=",$name)->get();
+        return $merit;
+    }
 }
