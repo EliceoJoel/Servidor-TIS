@@ -207,6 +207,10 @@ Route::post('permission/{id}', 'PermissionController@edit')->name('editPermissio
 //delete
 Route::get('permission/delete/{id}', 'PermissionController@delete')->name('deletePermission');
 
+//Meritos Register//
+//post
+Route::post('meritosRegister', 'MeritosRegisterController@add')->name('addmeritosPermision');
+
 
 
 
