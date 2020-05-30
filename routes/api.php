@@ -213,9 +213,25 @@ Route::get('permission/delete/{id}', 'PermissionController@delete')->name('delet
 //post
 Route::post('meritosRegister', 'MeritosRegisterController@add')->name('addmeritosPermision');
 
+//CONFIGURACION CONVOCATORIA//
 
+//get all
+Route::get('configAnnouncement', 'ConfigAnnouncementController@getAll')->name('getAllConfigAnnouncement');
+//post
+Route::post('configAnnouncement','ConfigAnnouncementController@add')->name('addConfigAnnouncement');
 
+//PORCENTAJE DE MERITO Y CONOCIMIENTO CONVOCATORIA//
 
+//get all
+Route::get('percentageAnnouncement', 'PercentageAnnouncementController@getAll')->name('getAllPercentageAnnouncement');
+//post
+Route::post('percentageAnnouncement','PercentageAnnouncementController@add')->name('addPercentageAnnouncement');
 
+//PORCENTAJE PARA CONOCIMIENTO DE DOCENCIA//
+
+//get all
+Route::get('percentageKnowledgeDoc', 'PercentageKnowledgeDocController@getAll')->name('getAllPercentageKnowledgeDoc');
+//post
+Route::post('percentageKnowledgeDoc','PercentageKnowledgeDocController@add')->name('addPercentageKnowledgeDoc');
 
 
