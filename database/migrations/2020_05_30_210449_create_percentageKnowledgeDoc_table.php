@@ -16,8 +16,8 @@ class CreatePercentageKnowledgeDocTable extends Migration
         Schema::create('percentageKnowledgeDoc', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_announcement');
-            $table->integer('oral');
-            $table->integer('written');
+            $table->string('type');
+            $table->integer('percentage');
             $table->timestamps();
         });
     }
