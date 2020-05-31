@@ -213,6 +213,12 @@ Route::get('permission/delete/{id}', 'PermissionController@delete')->name('delet
 //post
 Route::post('meritosRegister', 'MeritosRegisterController@add')->name('addmeritosPermision');
 
+//NOTAS//
+//push meritos note
+Route::post('notaMeritos', 'NotasController@addMerito')->name('addNotaMerito');
+//get meritos data and postulant
+Route::get('obtenerNotasMerito', 'NotasController@getmeritos')->name('getNotasMerito');
+
 //CONFIGURACION CONVOCATORIA//
 
 //get all
