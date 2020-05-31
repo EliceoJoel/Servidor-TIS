@@ -213,6 +213,10 @@ Route::get('permission/delete/{id}', 'PermissionController@delete')->name('delet
 //post
 Route::post('meritosRegister', 'MeritosRegisterController@add')->name('addmeritosPermision');
 
+//NOTAS//
+Route::post('notaMeritos', 'NotasController@addMerito')->name('addNotaMerito');
+Route::get('obtenerNotasMerito', 'NotasController@getmeritos')->name('getNotasMerito');
+
 
 
 
