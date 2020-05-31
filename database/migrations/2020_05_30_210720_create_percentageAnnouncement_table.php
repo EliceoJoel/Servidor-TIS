@@ -16,8 +16,8 @@ class CreatePercentageAnnouncementTable extends Migration
         Schema::create('percentageAnnouncement', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_announcement');
-            $table->integer('merit');
-            $table->integer('knowledge');
+            $table->string('type');
+            $table->integer('percentage');
             $table->timestamps();
         });
     }

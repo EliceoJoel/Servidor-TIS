@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class PercentageKnowledgeDoc extends Model
 {
     protected $table = 'percentageKnowledgeDoc';
-    protected $fillable = ['id_announcement','oral','written'];
+    protected $fillable = ['id_announcement','type','percentage'];
    
 }

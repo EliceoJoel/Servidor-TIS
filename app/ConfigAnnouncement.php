@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class ConfigAnnouncement extends Model
 {
     protected $table = 'percentageKnowledgeDoc';
-    protected $fillable = ['id_announcement','merit','knowledge'];
+    protected $fillable = ['id_announcement','type','configuration'];
 }

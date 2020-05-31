@@ -16,8 +16,8 @@ class CreateConfigAnnouncementTable extends Migration
         Schema::create('configAnnouncement', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_announcement');
-            $table->boolean('merit')->nullable();
-            $table->boolean('knowledge')->nullable();
+            $table->string('type')->nullable();
+            $table->boolean('configuration')->nullable();
             $table->timestamps();
         });
     }
