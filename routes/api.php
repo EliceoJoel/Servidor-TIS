@@ -133,6 +133,10 @@ Route::get('user/delete/{id}', 'UserController@delete')->name('deleteUser');
 //get announcements
 Route::get('userAnnouncement/{id}', 'functionsController@getAnnouncements')->name('getUserAnnouncement');
 
+// getAllUsers
+Route::get('AllUsers', 'UserController@getUsers')->name('getAllUsers');
+
+
 
 //AUXILIARY//
 
@@ -145,6 +149,10 @@ Route::get('auxiliary/{id}', 'AuxiliaryController@get')->name('getAuxiliary');
 //post get auxiliary de una convocatoria
 Route::post('auxiliarySearch','AuxiliaryController@search')->name('searchAuxiliary');
 
+
+//get auxiliary per id conv
+Route::get('getAux/{id}', 'functionsController@getAuxConv')->name('getAuxiliary');
+
 //THEMEAUXILIARY//
 
 //get all
@@ -155,6 +163,7 @@ Route::post('themeAuxiliary','ThemeAuxiliaryController@add')->name('addThemeAuxi
 Route::get('themeAuxiliary/{id}', 'ThemeAuxiliaryController@get')->name('getThemeAuxiliary');
 //post get theme de una convocatoria
 Route::post('themeAuxiliarySearch','ThemeAuxiliaryController@search')->name('searchThemeAuxiliary');
+
 
 //MERIT//
 
@@ -183,6 +192,9 @@ Route::get('percentageAuxiliary/{id}', 'PercentageAuxiliaryController@get')->nam
 Route::post('percentageAuxiliaryAnnouncement','PercentageAuxiliaryController@getByAnnouncement')->name('getByAnnouncementPercentageAuxiliary');
 //delete one percentage by id
 Route::post('percentageAuxiliaryDelete','PercentageAuxiliaryController@delete')->name('deletePercentageAuxiliary');
+//get theme per id auxiliary
+Route::post('getTheme', 'functionsController@getTheme')->name('getTheme');
+
 //ROL//
 //get all
 Route::get('rol', 'RolController@getAll')->name('getAllRol');
