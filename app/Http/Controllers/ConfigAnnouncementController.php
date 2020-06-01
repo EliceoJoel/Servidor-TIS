@@ -15,5 +15,17 @@ class ConfigAnnouncementController extends Controller
         $configAnnouncement = ConfigAnnouncement::create($request->all());
         return $configAnnouncement;
     }
-
+   
+    public function  finishConfigurationMerit(Request $request){
+       
+        $announcement = $request->id_announcement;
+        $configAnnouncement = ConfigAnnouncement::create($request->all());
+        return $configAnnouncement;
+    }
+    public function  finishConfigurationKnowledge(Request $request){
+       
+        $announcement = $request->id_announcement;
+        $configAnnouncement = ConfigAnnouncement::create($request->all());
+        return $configAnnouncement;
+    }   
 }
