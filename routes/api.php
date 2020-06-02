@@ -180,6 +180,12 @@ Route::post('meritSearch','MeritController@search')->name('searchMerit');
 Route::post('meritUpdate','MeritController@update')->name('updateMerit');
 //get por nombre de convocatoria
 Route::get('getMerit/{name}', 'MeritController@getByNameAnnouncement')->name('getMeritByNameAnnouncement');
+//get by announement
+Route::post('meritByAnnouncement','MeritController@getByAnnouncement')->name('getByAnnouncementMerit');
+//delete one percentage by id
+Route::post('deleteMerit','MeritController@delete')->name('deleteMerit');
+//end Configuration merit
+Route::post('endConfigurationMerit','MeritController@endConfiguration')->name('endConfigurationMerit');
 
 //PERCENTAGEAUXILIARY//
 
@@ -193,8 +199,13 @@ Route::get('percentageAuxiliary/{id}', 'PercentageAuxiliaryController@get')->nam
 Route::post('percentageAuxiliaryAnnouncement','PercentageAuxiliaryController@getByAnnouncement')->name('getByAnnouncementPercentageAuxiliary');
 //delete one percentage by id
 Route::post('percentageAuxiliaryDelete','PercentageAuxiliaryController@delete')->name('deletePercentageAuxiliary');
+
 //get theme per id auxiliary
 Route::post('getTheme', 'functionsController@getTheme')->name('getTheme');
+
+//end Configuration lab
+Route::post('endConfigurationLab','PercentageAuxiliaryController@endConfigurationLab')->name('endConfigurationPercentageAuxiliary');
+
 
 //ROL//
 //get all
@@ -238,6 +249,10 @@ Route::get('obtenerNotasMerito', 'NotasController@getmeritos')->name('getNotasMe
 Route::get('configAnnouncement', 'ConfigAnnouncementController@getAll')->name('getAllConfigAnnouncement');
 //post
 Route::post('configAnnouncement','ConfigAnnouncementController@add')->name('addConfigAnnouncement');
+//finalizar configuracion de meritos
+Route::post('finishConfigurationMerit','ConfigAnnouncementController@finishConfigurationMerit')->name('finishConfigMerit');
+//finalizar configuracion de conocimiento
+Route::post('finishConfigurationKnowledge','ConfigAnnouncementController@finishConfigurationKnowledge')->name('finishConfigKnowledge');
 
 //PORCENTAJE DE MERITO Y CONOCIMIENTO CONVOCATORIA//
 
@@ -252,5 +267,10 @@ Route::post('percentageAnnouncement','PercentageAnnouncementController@add')->na
 Route::get('percentageKnowledgeDoc', 'PercentageKnowledgeDocController@getAll')->name('getAllPercentageKnowledgeDoc');
 //post
 Route::post('percentageKnowledgeDoc','PercentageKnowledgeDocController@add')->name('addPercentageKnowledgeDoc');
-
+//get by announement
+Route::post('percentageKnowledgeDocAnn','PercentageKnowledgeDocController@getByAnnouncement')->name('getByAnnouncementPercentageKnowledgeDoc');
+//delete one percentage by id
+Route::post('percentageKnowledgeDocDelete','PercentageKnowledgeDocController@delete')->name('deletePercentageKnowledgeDoc');
+//terminar configuracion para conocimiento de docencia
+Route::post('endConfigurationDoc','PercentageKnowledgeDocController@endConfiguration')->name('endConfigurationMerit');
 

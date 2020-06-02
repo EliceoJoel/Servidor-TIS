@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\PercentageAuxiliary;
-
+use App\Auxiliary;
 class PercentageAuxiliaryController extends Controller
 {
     public function add(Request $request){
@@ -103,6 +103,26 @@ class PercentageAuxiliaryController extends Controller
         $deletePercentage = PercentageAuxiliary::where('id','=',$percentageId)->delete();
 
         return $deletePercentage;
+    }
+    public function endConfigurationLab(Request $request){
+        $announcement = $request->id_announcement;
+        $porcentajes =PercentageAuxiliary::select('percentage')->where('id_announcement', '=', $announcement)
+        ->get();
+       
+        $suma = 0;
+        foreach ($porcentajes as $oneporcentaje) {
+           $suma = $suma + $oneporcentaje->percentage;
+       }
+      $auxiliaturas = Auxiliary::select('name')->where('id_announcement', '=', $announcement) ->get();
+      $nroAux  =count($auxiliaturas) * 100;
+ 
+     // return $nroAux;
+       if($suma == $nroAux){
+            $percentageDoc ='true';
+       }else{
+           $percentageDoc = 'false';
+       }
+        return $percentageDoc;
     }
     
 }
