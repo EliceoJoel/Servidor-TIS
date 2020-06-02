@@ -269,6 +269,15 @@ Route::post('configAnnouncement','ConfigAnnouncementController@add')->name('addC
 Route::post('finishConfigurationMerit','ConfigAnnouncementController@finishConfigurationMerit')->name('finishConfigMerit');
 //finalizar configuracion de conocimiento
 Route::post('finishConfigurationKnowledge','ConfigAnnouncementController@finishConfigurationKnowledge')->name('finishConfigKnowledge');
+//ver si merito ya esta configurada 
+Route::post('isMeritConfigurated','ConfigAnnouncementController@meritConfigurated')->name('meritConfigurated');
+//cambiar el estado configurado de merito a falso 
+Route::post('setMeritConfiguratedFalse','ConfigAnnouncementController@meritFalseConfigurated')->name('meritConfiguratedfalse');
+//ver si knowledge ya esta configurada 
+Route::post('isKnowledgeConfigurated','ConfigAnnouncementController@knowledgeConfigurated')->name('knowledgeConfigurated');
+//cambiar el estado configurado de merito a falso 
+Route::post('setKnowledgeConfiguratedFalse','ConfigAnnouncementController@knowledgeFalseConfigurated')->name('knowledgeConfiguratedfalse');
+
 
 //PORCENTAJE DE MERITO Y CONOCIMIENTO CONVOCATORIA//
 
