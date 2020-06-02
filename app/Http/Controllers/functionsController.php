@@ -57,4 +57,16 @@ class functionsController extends Controller
         [$auxiliary]);
         return $announcement;
     }
+
+    public function getFinalScores(Request $request){
+        $announcement = $request->json()->get('announcement');
+        $scores = DB::select('
+        SELECT laboratory_socres."idPostulant", sum(score*percentage/100), "postulantEnable".name
+        FROM laboratory_socres , "percentageAuxiliary" , "postulantEnable"
+        WHERE "idtTheme" = "percentageAuxiliary".id and "postulantEnable".id = laboratory_socres."idPostulant"
+		and "postulantEnable".announcement = ?
+        group by "postulantEnable".id,laboratory_socres."idPostulant"',
+        [$announcement]);
+        return $scores;
+    }
 }

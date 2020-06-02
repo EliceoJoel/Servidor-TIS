@@ -21,6 +21,7 @@ Route::post('userAnnouncement','UserAnnouncementController@saveAnnouncement')->n
 //FUNCTIONS//
 Route::post('studentsData', 'functionsController@getStudents')->name('getStudent');
 Route::post('percentageData', 'functionsController@getPercentage')->name('getPercentage');
+Route::post('finalScores', 'functionsController@getFinalScores')->name('getFinalScores');
 
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
