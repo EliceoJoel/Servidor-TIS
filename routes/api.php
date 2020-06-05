@@ -241,7 +241,11 @@ Route::post('meritosRegister', 'MeritosRegisterController@add')->name('addmerito
 //push meritos note
 Route::post('notaMeritos', 'NotasController@addMerito')->name('addNotaMerito');
 //get meritos data and postulant
-Route::get('obtenerNotasMerito', 'NotasController@getmeritos')->name('getNotasMerito');
+Route::get('obtenerNotasMerito', 'NotasController@getMeritos')->name('getNotasMerito');
+//get de todas las notas
+Route::get('allNotes', 'NotasController@getAllNotes')->name('getAllNotes');
+//get percentage announcement
+Route::get('getper', 'NotasController@getPercentage')->name('getAllNotes');
 
 //CONFIGURACION CONVOCATORIA//
 
