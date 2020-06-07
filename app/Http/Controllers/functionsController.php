@@ -38,4 +38,35 @@ class functionsController extends Controller
         [$id]);
         return $announcement;
     }
+
+    public function getAuxConv($id){
+        $announcement = DB::select('
+        select *
+        from auxiliary
+        where auxiliary.id_announcement = ?', 
+        [$id]);
+        return $announcement;
+    }
+
+    public function getTheme(Request $request){
+        $auxiliary = $request->json()->get('auxiliary');
+        $announcement = DB::select('
+        select *
+        from "percentageAuxiliary"
+        where auxiliary = ?', 
+        [$auxiliary]);
+        return $announcement;
+    }
+
+    public function getFinalScores(Request $request){
+        $announcement = $request->json()->get('announcement');
+        $scores = DB::select('
+        SELECT laboratory_socres."idPostulant", sum(score*percentage/100), "postulantEnable".name
+        FROM laboratory_socres , "percentageAuxiliary" , "postulantEnable"
+        WHERE "idtTheme" = "percentageAuxiliary".id and "postulantEnable".id = laboratory_socres."idPostulant"
+		and "postulantEnable".announcement = ?
+        group by "postulantEnable".id,laboratory_socres."idPostulant"',
+        [$announcement]);
+        return $scores;
+    }
 }
