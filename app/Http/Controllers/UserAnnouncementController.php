@@ -11,6 +11,8 @@ class UserAnnouncementController extends Controller
     {
         user_announcement::create([
             'idAnnouncement' => $request->json()->get('idAnnouncement'),
+            'idAuxiliary' => $request->json()->get('idAuxiliary'),
+            'idTheme' => $request->json()->get('idTheme'),
             'idUser' => $request->json()->get('idUser'),
         ]);
     }
