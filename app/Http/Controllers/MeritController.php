@@ -91,6 +91,13 @@ class MeritController extends Controller
 
         return $merit;
     }
+    public function getByAnnouncementConfig(Request $request){
+        $announcement = $request->id_announcement;
+        $merit =Merit::where('id_announcement','=',$announcement) ->get();
+                      
+
+        return $merit;
+    }
     public function delete(Request $request){
         $percentageId = $request->id_percentage;
         $merit = Merit::where('id','=',$percentageId)
@@ -114,5 +121,11 @@ class MeritController extends Controller
            $merit = 'false';
        }
         return $merit;
+    }
+    public function deleteMerit(Request $request){
+        $merit = $request->id_merit;
+        $deleteMerit =  Merit::where('id','=',$merit)->delete();
+
+        return $deleteMerit;
     }
 }

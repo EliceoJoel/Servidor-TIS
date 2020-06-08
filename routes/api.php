@@ -74,6 +74,8 @@ Route::get('postulantEnable/delete/{id}', 'PostulantEnableController@delete')->n
 Route::post('requirement', 'RequirementConvController@add')->name ('addRequirement');
 
 Route::post('requirementList','RequirementConvController@getReq')->name('getRequirement');
+//delete Requirement
+Route::post('requirementDelete','RequirementConvController@delete')->name('getRequirement');
 
 //REGISTER BOOK//
 Route::get('registerBook', 'RegisterBookController@getAll')->name('getAllRegisterBook');
@@ -137,6 +139,7 @@ Route::post('user/{id}', 'UserController@edit')->name('editUser');
 Route::get('user/delete/{id}', 'UserController@delete')->name('deleteUser');
 //get announcements
 Route::get('userAnnouncement/{id}', 'functionsController@getAnnouncements')->name('getUserAnnouncement');
+Route::get('userAnnouncementUser/{id}', 'functionsController@getAnnouncementsUser')->name('getUserAnnouncement');
 
 Route::get('userAnnouncementLab/{id}', 'functionsController@getAnnouncementsLab')->name('getUserAnnouncementLab');
 
@@ -159,8 +162,8 @@ Route::post('auxiliary','AuxiliaryController@add')->name('addAuxiliary');
 Route::get('auxiliary/{id}', 'AuxiliaryController@get')->name('getAuxiliary');
 //post get auxiliary de una convocatoria
 Route::post('auxiliarySearch','AuxiliaryController@search')->name('searchAuxiliary');
-
-
+//delete
+Route::post('auxiliaryDelete','AuxiliaryController@delete')->name('searchAuxiliary');
 //get auxiliary per id conv
 Route::get('getAux/{id}', 'functionsController@getAuxConv')->name('getAuxiliary');
 
@@ -174,7 +177,8 @@ Route::post('themeAuxiliary','ThemeAuxiliaryController@add')->name('addThemeAuxi
 Route::get('themeAuxiliary/{id}', 'ThemeAuxiliaryController@get')->name('getThemeAuxiliary');
 //post get theme de una convocatoria
 Route::post('themeAuxiliarySearch','ThemeAuxiliaryController@search')->name('searchThemeAuxiliary');
-
+//delete Theme
+Route::post('deleteTheme','ThemeAuxiliaryController@delete')->name('searchThemeAuxiliary');
 
 //MERIT//
 
@@ -192,8 +196,12 @@ Route::post('meritUpdate','MeritController@update')->name('updateMerit');
 Route::get('getMerit/{name}', 'MeritController@getByNameAnnouncement')->name('getMeritByNameAnnouncement');
 //get by announement
 Route::post('meritByAnnouncement','MeritController@getByAnnouncement')->name('getByAnnouncementMerit');
+//get by announement config
+Route::post('meritByAnnouncementConfig','MeritController@getByAnnouncementConfig')->name('getByAnnouncementMerit');
 //delete one percentage by id
 Route::post('deleteMerit','MeritController@delete')->name('deleteMerit');
+//delete merit
+Route::post('deleteMeritConfig','MeritController@deleteMerit')->name('deleteMerit');
 //end Configuration merit
 Route::post('endConfigurationMerit','MeritController@endConfiguration')->name('endConfigurationMerit');
 
