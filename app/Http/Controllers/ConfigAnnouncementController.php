@@ -11,7 +11,7 @@ class ConfigAnnouncementController extends Controller
         return $configAnnouncement;
     }
 
-    public function add(Request $request){
+    public function add(Request $request){  
         $configAnnouncement = ConfigAnnouncement::create($request->all());
         return $configAnnouncement;
     }
@@ -68,5 +68,6 @@ class ConfigAnnouncementController extends Controller
       
         return $configurated;
     }   
+   
     
 }

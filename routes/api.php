@@ -48,6 +48,8 @@ Route::post('announcement', 'AnnouncementController@add')->name ('addAnnouncemen
 Route::get('announcement', 'AnnouncementController@getAll')->name('getAllAnnouncement');
 //get one
 Route::get('announcement/{id}', 'AnnouncementController@get')->name('getAnnouncement');
+//get one for generate rotulate
+Route::get('announcementGenerate/{id}', 'AnnouncementController@getGenerate')->name('getAnnouncement');
 //announcementsearch
 Route::post('announcementSearch', 'AnnouncementController@search')->name ('searchAnnouncement');
 
@@ -273,7 +275,10 @@ Route::post('setKnowledgeConfiguratedFalse','ConfigAnnouncementController@knowle
 Route::get('percentageAnnouncement', 'PercentageAnnouncementController@getAll')->name('getAllPercentageAnnouncement');
 //post
 Route::post('percentageAnnouncement','PercentageAnnouncementController@add')->name('addPercentageAnnouncement');
-
+//get by announement
+Route::post('percentageAnnouncementByAnnouncement','PercentageAnnouncementController@getByAnnouncement')->name('getByAnnouncementPercentageAnnouncement');
+//delete one percentage by id
+Route::post('percentageAnnouncementDelete','PercentageAnnouncementController@delete')->name('deletePercentageAnnouncement');
 //PORCENTAJE PARA CONOCIMIENTO DE DOCENCIA//
 
 //get all
