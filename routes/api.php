@@ -51,6 +51,8 @@ Route::post('announcement', 'AnnouncementController@add')->name ('addAnnouncemen
 Route::get('announcement', 'AnnouncementController@getAll')->name('getAllAnnouncement');
 //get one
 Route::get('announcement/{id}', 'AnnouncementController@get')->name('getAnnouncement');
+//get one for generate rotulate
+Route::get('announcementGenerate/{id}', 'AnnouncementController@getGenerate')->name('getAnnouncement');
 //announcementsearch
 Route::post('announcementSearch', 'AnnouncementController@search')->name ('searchAnnouncement');
 
@@ -73,6 +75,8 @@ Route::get('postulantEnable/delete/{id}', 'PostulantEnableController@delete')->n
 Route::post('requirement', 'RequirementConvController@add')->name ('addRequirement');
 
 Route::post('requirementList','RequirementConvController@getReq')->name('getRequirement');
+//delete Requirement
+Route::post('requirementDelete','RequirementConvController@delete')->name('getRequirement');
 
 //REGISTER BOOK//
 Route::get('registerBook', 'RegisterBookController@getAll')->name('getAllRegisterBook');
@@ -136,6 +140,13 @@ Route::post('user/{id}', 'UserController@edit')->name('editUser');
 Route::get('user/delete/{id}', 'UserController@delete')->name('deleteUser');
 //get announcements
 Route::get('userAnnouncement/{id}', 'functionsController@getAnnouncements')->name('getUserAnnouncement');
+Route::get('userAnnouncementUser/{id}', 'functionsController@getAnnouncementsUser')->name('getUserAnnouncement');
+
+Route::get('userAnnouncementLab/{id}', 'functionsController@getAnnouncementsLab')->name('getUserAnnouncementLab');
+
+Route::get('userAuxiliary/{id}/{conv}', 'functionsController@getUserAuxiliary')->name('getUserAuxiliary');
+
+Route::get('userTheme/{id}/{conv}/{aux}', 'functionsController@getUserTheme')->name('getUserTheme');
 
 Route::get('userAnnouncementLab/{id}', 'functionsController@getAnnouncementsLab')->name('getUserAnnouncementLab');
 
@@ -158,8 +169,8 @@ Route::post('auxiliary','AuxiliaryController@add')->name('addAuxiliary');
 Route::get('auxiliary/{id}', 'AuxiliaryController@get')->name('getAuxiliary');
 //post get auxiliary de una convocatoria
 Route::post('auxiliarySearch','AuxiliaryController@search')->name('searchAuxiliary');
-
-
+//delete
+Route::post('auxiliaryDelete','AuxiliaryController@delete')->name('searchAuxiliary');
 //get auxiliary per id conv
 Route::get('getAux/{id}', 'functionsController@getAuxConv')->name('getAuxiliary');
 
@@ -173,7 +184,8 @@ Route::post('themeAuxiliary','ThemeAuxiliaryController@add')->name('addThemeAuxi
 Route::get('themeAuxiliary/{id}', 'ThemeAuxiliaryController@get')->name('getThemeAuxiliary');
 //post get theme de una convocatoria
 Route::post('themeAuxiliarySearch','ThemeAuxiliaryController@search')->name('searchThemeAuxiliary');
-
+//delete Theme
+Route::post('deleteTheme','ThemeAuxiliaryController@delete')->name('searchThemeAuxiliary');
 
 //MERIT//
 
@@ -191,8 +203,12 @@ Route::post('meritUpdate','MeritController@update')->name('updateMerit');
 Route::get('getMerit/{name}', 'MeritController@getByNameAnnouncement')->name('getMeritByNameAnnouncement');
 //get by announement
 Route::post('meritByAnnouncement','MeritController@getByAnnouncement')->name('getByAnnouncementMerit');
+//get by announement config
+Route::post('meritByAnnouncementConfig','MeritController@getByAnnouncementConfig')->name('getByAnnouncementMerit');
 //delete one percentage by id
 Route::post('deleteMerit','MeritController@delete')->name('deleteMerit');
+//delete merit
+Route::post('deleteMeritConfig','MeritController@deleteMerit')->name('deleteMerit');
 //end Configuration merit
 Route::post('endConfigurationMerit','MeritController@endConfiguration')->name('endConfigurationMerit');
 
@@ -270,6 +286,15 @@ Route::post('configAnnouncement','ConfigAnnouncementController@add')->name('addC
 Route::post('finishConfigurationMerit','ConfigAnnouncementController@finishConfigurationMerit')->name('finishConfigMerit');
 //finalizar configuracion de conocimiento
 Route::post('finishConfigurationKnowledge','ConfigAnnouncementController@finishConfigurationKnowledge')->name('finishConfigKnowledge');
+//ver si merito ya esta configurada 
+Route::post('isMeritConfigurated','ConfigAnnouncementController@meritConfigurated')->name('meritConfigurated');
+//cambiar el estado configurado de merito a falso 
+Route::post('setMeritConfiguratedFalse','ConfigAnnouncementController@meritFalseConfigurated')->name('meritConfiguratedfalse');
+//ver si knowledge ya esta configurada 
+Route::post('isKnowledgeConfigurated','ConfigAnnouncementController@knowledgeConfigurated')->name('knowledgeConfigurated');
+//cambiar el estado configurado de merito a falso 
+Route::post('setKnowledgeConfiguratedFalse','ConfigAnnouncementController@knowledgeFalseConfigurated')->name('knowledgeConfiguratedfalse');
+
 
 //PORCENTAJE DE MERITO Y CONOCIMIENTO CONVOCATORIA//
 
@@ -277,7 +302,10 @@ Route::post('finishConfigurationKnowledge','ConfigAnnouncementController@finishC
 Route::get('percentageAnnouncement', 'PercentageAnnouncementController@getAll')->name('getAllPercentageAnnouncement');
 //post
 Route::post('percentageAnnouncement','PercentageAnnouncementController@add')->name('addPercentageAnnouncement');
-
+//get by announement
+Route::post('percentageAnnouncementByAnnouncement','PercentageAnnouncementController@getByAnnouncement')->name('getByAnnouncementPercentageAnnouncement');
+//delete one percentage by id
+Route::post('percentageAnnouncementDelete','PercentageAnnouncementController@delete')->name('deletePercentageAnnouncement');
 //PORCENTAJE PARA CONOCIMIENTO DE DOCENCIA//
 
 //get all
