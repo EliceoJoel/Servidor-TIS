@@ -34,8 +34,51 @@ class functionsController extends Controller
         select announcement.*
         from announcement,user_announcement
         where   announcement.id = user_announcement."idAnnouncement" 
-        and user_announcement."idUser" = ?', 
-        [$id]);
+        and user_announcement."idUser" = ?
+		and type = ?
+        group by announcement."id"
+        ', 
+        [$id,'Docencia']);
+        return $announcement;
+    }
+
+    public function getAnnouncementsLab($id){
+        $announcement = DB::select('
+        select announcement.*
+        from announcement,user_announcement
+        where   announcement.id = user_announcement."idAnnouncement" 
+        and user_announcement."idUser" = ?
+		and type = ?
+        group by announcement."id"
+        ', 
+        [$id,'Laboratorio']);
+        return $announcement;
+    }
+
+    public function getUserAuxiliary($id,$conv){
+        $announcement = DB::select('
+            select auxiliary.id, auxiliary.id_announcement, 
+		    auxiliary.name, "idUser"
+	        from auxiliary,user_announcement
+	        where auxiliary.id = user_announcement."idAuxiliary" and "idUser" = ?
+		    and "id_announcement" = ?
+	        group by auxiliary.id, "idUser"
+        ', 
+        [$id,$conv]);
+        return $announcement;
+    }
+
+    public function getUserTheme($id,$conv,$aux){
+        $announcement = DB::select('
+        select percentage, "percentageAuxiliary".id, theme
+        from "percentageAuxiliary" , auxiliary, user_announcement
+        where "percentageAuxiliary".auxiliary = name and user_announcement."idUser" = ?
+        and auxiliary.id_announcement = user_announcement."idAnnouncement" and user_announcement."idAnnouncement" = ?
+        and user_announcement."idAuxiliary" = auxiliary.id and user_announcement."idAuxiliary" = ?
+		and user_announcement."idTheme" = "percentageAuxiliary".id
+        group by "percentageAuxiliary".id,name
+        ', 
+        [$id,$conv,$aux]);
         return $announcement;
     }
 
@@ -58,15 +101,37 @@ class functionsController extends Controller
         return $announcement;
     }
 
-    public function getFinalScores(Request $request){
-        $announcement = $request->json()->get('announcement');
+    public function getFinalScores($id){
         $scores = DB::select('
         SELECT laboratory_socres."idPostulant", sum(score*percentage/100), "postulantEnable".name
         FROM laboratory_socres , "percentageAuxiliary" , "postulantEnable"
         WHERE "idtTheme" = "percentageAuxiliary".id and "postulantEnable".id = laboratory_socres."idPostulant"
-		and "postulantEnable".announcement = ?
-        group by "postulantEnable".id,laboratory_socres."idPostulant"',
-        [$announcement]);
+		and "postulantEnable".id = ?
+        group by "postulantEnable".id,laboratory_socres."idPostulant"
+        ',
+        [$id]);
         return $scores;
+    }
+
+    public function getTheory($id,$pos){
+        $announcement = DB::select('
+        select score, score_oral, id_postulant, "percentageKnowledgeDoc".type, percentage
+        from postulant_scores, "postulantEnable", "percentageKnowledgeDoc", announcement
+        where postulant_scores.id_postulant = "postulantEnable".id and "postulantEnable".announcement = announcement.name 
+        and announcement.id = "percentageKnowledgeDoc".id_announcement and announcement.id = ? and id_postulant = ?
+        ', 
+        [$id,$pos]);
+        return $announcement;
+    }
+
+    public function getAverage($id){
+        $announcement = DB::select('
+        select "postulantEnable".auxiliary, "postulantEnable".name ,notas.nota_final
+    from notas, "postulantEnable", announcement
+    where "postulantEnable".id = notas.id_postulant and announcement.name = "postulantEnable".announcement
+    and announcement.id = ?
+        ', 
+        [$id]);
+        return $announcement;
     }
 }

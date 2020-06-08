@@ -16,6 +16,8 @@ class CreateUserAnnouncementTable extends Migration
         Schema::create('user_announcement', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('idAnnouncement');
+            $table->integer('idAuxiliary');
+            $table->integer('idTheme');
             $table->integer('idUser');
             $table->timestamps();
         });
