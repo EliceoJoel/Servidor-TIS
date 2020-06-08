@@ -21,7 +21,9 @@ Route::post('userAnnouncement','UserAnnouncementController@saveAnnouncement')->n
 //FUNCTIONS//
 Route::post('studentsData', 'functionsController@getStudents')->name('getStudent');
 Route::post('percentageData', 'functionsController@getPercentage')->name('getPercentage');
-Route::post('finalScores', 'functionsController@getFinalScores')->name('getFinalScores');
+Route::get('finalScores/{id}', 'functionsController@getFinalScores')->name('getFinalScores');
+Route::get('theoryScore/{id}/{pos}', 'functionsController@getTheory')->name('getTheoryScores');
+Route::get('getAverage/{id}', 'functionsController@getAverage')->name('getAverage');
 
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
@@ -133,6 +135,12 @@ Route::post('user/{id}', 'UserController@edit')->name('editUser');
 Route::get('user/delete/{id}', 'UserController@delete')->name('deleteUser');
 //get announcements
 Route::get('userAnnouncement/{id}', 'functionsController@getAnnouncements')->name('getUserAnnouncement');
+
+Route::get('userAnnouncementLab/{id}', 'functionsController@getAnnouncementsLab')->name('getUserAnnouncementLab');
+
+Route::get('userAuxiliary/{id}/{conv}', 'functionsController@getUserAuxiliary')->name('getUserAuxiliary');
+
+Route::get('userTheme/{id}/{conv}/{aux}', 'functionsController@getUserTheme')->name('getUserTheme');
 
 // getAllUsers
 Route::get('AllUsers', 'UserController@getUsers')->name('getAllUsers');
@@ -246,6 +254,10 @@ Route::get('obtenerNotasMerito', 'NotasController@getMeritos')->name('getNotasMe
 Route::get('allNotes', 'NotasController@getAllNotes')->name('getAllNotes');
 //get percentage announcement
 Route::get('getper', 'NotasController@getPercentage')->name('getAllNotes');
+
+Route::post('notaConocimiento', 'NotasController@addConocimiento')->name('addNotaConocimiento');
+
+
 
 //CONFIGURACION CONVOCATORIA//
 

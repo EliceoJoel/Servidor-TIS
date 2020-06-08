@@ -62,4 +62,31 @@ class NotasController extends Controller
         $percentage = $percentageMerito[0]->percentage;
         return $percentage;
     }
+
+    public function addConocimiento(Request $request){
+
+        $notaConocimiento = $request->json()->get('notaConocimiento');
+        $idPostulant = $request->json()->get('idPostulant');
+        $announcement = $request->json()->get('announcement');
+
+        $percentageMerit = $this->getPercentage($announcement, 'merito');
+        $percentageKnow = $this->getPercentage($announcement, 'conocimiento');
+
+        if (Notas::where('id_postulant', '=', $idPostulant)->exists()) {
+            $notas = Notas::where('id_postulant','=',$idPostulant)->get();
+            $notaMerit = ($notas[0]->nota_merito)*$percentageMerit/100;
+            $score = $notaConocimiento*($percentageKnow/100);
+            $notaFinal = $score + $notaMerit;
+            Notas::where('id_postulant', $idPostulant)
+                   ->update(['nota_conocimiento' => $notaConocimiento, 'nota_final'=> round($notaFinal, 2)]);
+        }else{
+            $notaFinal = $notaConocimiento*($percentageKnow/100);
+            $nota = new Notas;
+            $nota->id_postulant = $idPostulant;
+            $nota->nota_conocimiento = $notaConocimiento;
+            $nota->nota_merito = 0;
+            $nota->nota_final = round($notaFinal, 2);
+            $nota->save();
+        }
+    }
 }

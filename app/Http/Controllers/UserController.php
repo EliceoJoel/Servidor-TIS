@@ -20,10 +20,11 @@ class UserController extends Controller
 {
     public function getStudentsScores(){
         $students = DB::select('
-        select "postulantEnable".id_book, "postulantEnable".name, "postulantEnable".auxiliary, "postulantEnable".announcement,
-               "postulantEnable".enable, "postulant_scores".score, "postulant_scores".score_oral
+        select "postulantEnable".id, "postulantEnable".name, "postulantEnable".auxiliary, "postulantEnable".announcement,
+        "postulantEnable".enable, "postulant_scores".score, "postulant_scores".score_oral
         from public."postulantEnable" , public."postulant_scores"
-        where "postulantEnable".id_book = "postulant_scores".id_postulant');
+        where "postulantEnable".id = "postulant_scores".id_postulant
+        ');
         return $students;
     }
 
