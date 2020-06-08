@@ -147,6 +147,12 @@ Route::get('userAuxiliary/{id}/{conv}', 'functionsController@getUserAuxiliary')-
 
 Route::get('userTheme/{id}/{conv}/{aux}', 'functionsController@getUserTheme')->name('getUserTheme');
 
+Route::get('userAnnouncementLab/{id}', 'functionsController@getAnnouncementsLab')->name('getUserAnnouncementLab');
+
+Route::get('userAuxiliary/{id}/{conv}', 'functionsController@getUserAuxiliary')->name('getUserAuxiliary');
+
+Route::get('userTheme/{id}/{conv}/{aux}', 'functionsController@getUserTheme')->name('getUserTheme');
+
 // getAllUsers
 Route::get('AllUsers', 'UserController@getUsers')->name('getAllUsers');
 
