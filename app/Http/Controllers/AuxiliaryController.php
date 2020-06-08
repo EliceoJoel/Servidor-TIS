@@ -33,4 +33,10 @@ class AuxiliaryController extends Controller
  
          return $auxiliary;
      }
+     public function delete(Request $request){
+        $auxiliary = $request->id_auxiliary;
+        $deleteAux =  Auxiliary::where('id','=',$auxiliary)->delete();
+
+        return $deleteAux;
+    }
 }

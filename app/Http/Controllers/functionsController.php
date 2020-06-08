@@ -41,6 +41,15 @@ class functionsController extends Controller
         [$id,'Docencia']);
         return $announcement;
     }
+    public function getAnnouncementsUser($id){
+        $announcement = DB::select('
+        select announcement.*
+        from announcement,user_announcement
+        where   announcement.id = user_announcement."idAnnouncement" 
+        and user_announcement."idUser" = ?', 
+        [$id]);
+        return $announcement;
+    }
 
     public function getAnnouncementsLab($id){
         $announcement = DB::select('
@@ -135,3 +144,4 @@ class functionsController extends Controller
         return $announcement;
     }
 }
+

@@ -33,4 +33,10 @@ class ThemeAuxiliaryController extends Controller
  
          return $themeAuxiliary;
      }
+     public function delete(Request $request){
+        $theme = $request->id_theme;
+        $deleteTheme =  ThemeAuxiliary::where('id','=',$theme)->delete();
+
+        return $deleteTheme;
+    }
 }

@@ -22,4 +22,10 @@ class RequirementConvController extends Controller
  
          return $postulantReq;
      }
+     public function delete(Request $request){
+        $requirement = $request->id_requirement;
+        $deleteReq =  RequirementConv::where('id','=',$requirement)->delete();
+
+        return $deleteReq;
+    }
 }
