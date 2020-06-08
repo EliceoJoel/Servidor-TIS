@@ -24,6 +24,7 @@ Route::post('percentageData', 'functionsController@getPercentage')->name('getPer
 Route::get('finalScores/{id}', 'functionsController@getFinalScores')->name('getFinalScores');
 Route::get('theoryScore/{id}/{pos}', 'functionsController@getTheory')->name('getTheoryScores');
 Route::get('getAverage/{id}', 'functionsController@getAverage')->name('getAverage');
+Route::get('updateRol/{id}/{rol}', 'functionsController@updateRol')->name('updateROl');
 
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
