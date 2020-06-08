@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Announcement;
-
+use App\Auxiliary;
 class AnnouncementController extends Controller
 {
     public function add(Request $request){
@@ -21,6 +21,10 @@ class AnnouncementController extends Controller
 
     public function get($id){
         $announcement = Announcement::find($id);
+        return $announcement;
+    }
+    public function getGenerate($id){
+        $announcement = Auxiliary::where('id_announcement', '=', $id)->get();
         return $announcement;
     }
     
