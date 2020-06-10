@@ -144,3 +144,4 @@ class functionsController extends Controller
         return $announcement;
     }
 }
+
