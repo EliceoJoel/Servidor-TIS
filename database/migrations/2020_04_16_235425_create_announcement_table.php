@@ -19,7 +19,7 @@ class CreateAnnouncementTable extends Migration
         $table->string('year', 10);
         $table->string('type', 30);
         $table->string('departament', 30);
-        $table->json('auxiliary');
+        //$table->json('auxiliary');
         $table->string('file');
         $table->timestamps();
         });
