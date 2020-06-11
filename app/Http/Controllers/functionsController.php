@@ -136,11 +136,21 @@ class functionsController extends Controller
     public function getAverage($id){
         $announcement = DB::select('
         select "postulantEnable".auxiliary, "postulantEnable".name ,notas.nota_final
-    from notas, "postulantEnable", announcement
-    where "postulantEnable".id = notas.id_postulant and announcement.name = "postulantEnable".announcement
-    and announcement.id = ?
+        from notas, "postulantEnable", announcement
+        where "postulantEnable".id = notas.id_postulant and announcement.name = "postulantEnable".announcement
+        and announcement.id = ?
         ', 
         [$id]);
+        return $announcement;
+    }
+
+    public function updateRol($id,$rol){
+        $announcement = DB::update('
+        update users
+        set "idRol" = ? 
+        where id = ?
+        ', 
+        [$rol,$id]);
         return $announcement;
     }
 }
