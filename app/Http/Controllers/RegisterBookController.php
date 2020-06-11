@@ -13,8 +13,15 @@ class RegisterBookController extends Controller
     }
 
     public function add(Request $request){
-        $registerBook = RegisterBook::create($request->all());
-        return $registerBook;
+        $sisCode = $request->json()->get('sis_code');
+        if (RegisterBook::where('sis_code', '=', $sisCode)->exists()) {
+            RegisterBook::where('sis_code', $sisCode)->delete();
+            $registerBook = RegisterBook::create($request->all());
+            return $registerBook;
+        }else{
+            $registerBook = MeritosRegister::create($request->all());
+            return $registerBook;
+        }
     }
 
     public function get($id){
