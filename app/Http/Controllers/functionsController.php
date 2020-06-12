@@ -43,7 +43,7 @@ class functionsController extends Controller
     }
     public function getAnnouncementsUser($id){
         $announcement = DB::select('
-        select announcement.*
+        select distinct announcement.*
         from announcement,user_announcement
         where   announcement.id = user_announcement."idAnnouncement" 
         and user_announcement."idUser" = ?', 
