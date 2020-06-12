@@ -15,13 +15,15 @@ class CreatePostulantTable extends Migration
     {
         Schema::create('postulant',function (Blueprint $table) {
             $table->increments('id');
-            $table->string('names', 30);
+            $table->string('names', 60);
             $table->string('first_surname', 30);
             $table->string('second_surname', 30);
             $table->string('direction', 100);
             $table->string('email', 100);
             $table->string('phone', 8);
             $table->string('ci', 8);
+            $table->string('sis_code', 9);
+            $table->string('announcement');
             $table->string('auxiliary');
             $table->timestamps();
         });
