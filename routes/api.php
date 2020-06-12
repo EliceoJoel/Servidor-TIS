@@ -105,7 +105,7 @@ Route::post('postulantenable', 'PostulantEnableController@add')->name ('addPostu
 //get all postulantenable
 Route::get('postulantenable', 'PostulantEnableController@getAll')->name('getAllPostulantEnable');
 //get by enable=true
-Route::get('enablePostulant', 'PostulantEnableController@getbyTrue')->name('getPostulantEnable');
+Route::post('enablePostulant', 'PostulantEnableController@getbyTrue')->name('getPostulantEnable');
 
 //IMPORTANTDATE//
 Route::post('importantDate', 'ImportantDateController@add')->name ('addImportantDate');

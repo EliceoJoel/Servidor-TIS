@@ -58,8 +58,9 @@ class PostulantEnableController extends Controller
         return $postulantEnable;
     }
 
-    public function getByTrue(){
-        $postulantEnable = PostulantEnable::where("enable","=",true)->get();
+    public function getByTrue(Request $request){
+        $announcement = $request->json()->get('name');
+        $postulantEnable = PostulantEnable::where("enable","=",true)->where("announcement", "=", $announcement)->get();
         return $postulantEnable;
     }
 }
