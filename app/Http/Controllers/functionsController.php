@@ -153,5 +153,38 @@ class functionsController extends Controller
         [$rol,$id]);
         return $announcement;
     }
+
+    public function getThemeAux($id){
+        $theme = DB::select('
+        select "percentageAuxiliary".theme, auxiliary.id
+        from "percentageAuxiliary" , auxiliary
+        where "percentageAuxiliary".auxiliary = auxiliary.name and auxiliary.id = ?
+		order by theme
+        ', 
+        [$id]);
+        return $theme;
+    }
+    public function getPostulantEnable($id){
+        $postulant = DB::select('
+        select pe.name, a.name as aux, a.id
+        from "postulantEnable" as pe, auxiliary a
+        where pe.auxiliary = a.name and a.id = ? and pe.enable = true
+        order by pe.id
+        ', 
+        [$id]);
+        return $postulant;
+    }
+
+    public function getPostulantLabScores($id){
+        $postulant = DB::select('
+        select ls."idPostulant", ls.score, pe.name,pa.id as idTheme, a.id as idAux
+        from laboratory_socres as ls, "postulantEnable" as pe, "percentageAuxiliary" as pa, auxiliary as a
+        where ls."idPostulant" = pe.id and pa.id = ls."idtTheme" and a.name = pe.auxiliary and a.id = ?
+        order by "idPostulant" , pa.theme
+        ', 
+        [$id]);
+        return $postulant;
+    }
 }
+
 

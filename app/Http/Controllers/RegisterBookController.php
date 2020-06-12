@@ -20,7 +20,7 @@ class RegisterBookController extends Controller
             $registerBook = RegisterBook::create($request->all());
             return $registerBook;
         }else{
-            $registerBook = MeritosRegister::create($request->all());
+            $registerBook = RegisterBook::create($request->all());
             return $registerBook;
         }
     }

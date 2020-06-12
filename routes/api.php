@@ -25,6 +25,7 @@ Route::get('finalScores/{id}', 'functionsController@getFinalScores')->name('getF
 Route::get('theoryScore/{id}/{pos}', 'functionsController@getTheory')->name('getTheoryScores');
 Route::get('getAverage/{id}', 'functionsController@getAverage')->name('getAverage');
 Route::get('updateRol/{id}/{rol}', 'functionsController@updateRol')->name('updateROl');
+Route::get('GetLabScore/{id}', 'functionsController@getPostulantLabScores')->name('getLaboratoryScores');
 
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
@@ -32,7 +33,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 //POSTULANT//
-
 //get all
 Route::get('postulant', 'PostulantController@getAll')->name('getAllPostulant');
 //post
@@ -43,6 +43,12 @@ Route::get('postulant/{id}', 'PostulantController@get')->name('getPostulant');
 Route::post('postulant/{id}', 'PostulantController@edit')->name('editPostulant');
 //delete
 Route::get('postulant/delete/{id}', 'PostulantController@delete')->name('deletePostulant');
+//getPostulantEnablePerAux
+Route::get('AuxPostEn/{id}', 'functionsController@getPostulantEnable')->name('getPostulantEnablePerAux');
+
+
+
+
 //ANNOUNCEMENT//
 
 //post/announcement
@@ -173,6 +179,8 @@ Route::post('auxiliarySearch','AuxiliaryController@search')->name('searchAuxilia
 Route::post('auxiliaryDelete','AuxiliaryController@delete')->name('searchAuxiliary');
 //get auxiliary per id conv
 Route::get('getAux/{id}', 'functionsController@getAuxConv')->name('getAuxiliary');
+//get auxiliary themes
+Route::get('getAuxTheme/{id}', 'functionsController@getThemeAux')->name('getAuxiliaryThemes');
 
 //THEMEAUXILIARY//
 
