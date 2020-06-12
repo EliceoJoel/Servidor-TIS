@@ -14,7 +14,8 @@ class RegisterBookController extends Controller
 
     public function add(Request $request){
         $sisCode = $request->json()->get('sis_code');
-        if (RegisterBook::where('sis_code', '=', $sisCode)->exists()) {
+        $announcement = $request->json()->get('announcement');
+        if (RegisterBook::where('sis_code', '=', $sisCode)->where('announcement', '=', $announcement)->exists() ) {
             RegisterBook::where('sis_code', $sisCode)->delete();
             $registerBook = RegisterBook::create($request->all());
             return $registerBook;
