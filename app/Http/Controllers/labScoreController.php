@@ -11,7 +11,7 @@ class labScoreController extends Controller
         $idPostulant = $request ->get('idPostulant');
         $idtTheme = $request ->get('idtTheme');
         $score = $request ->get('score');
-        if (Laboratory_score::where('idPostulant', '=', $idPostulant)->exists()){
+        if (Laboratory_score::where('idPostulant', '=', $idPostulant)->where('idtTheme', '=', $idtTheme)->exists()){
             DB::update('
                 update laboratory_socres
                 set score= ?
