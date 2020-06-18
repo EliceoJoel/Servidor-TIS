@@ -166,7 +166,7 @@ class functionsController extends Controller
     }
     public function getPostulantEnable($id){
         $postulant = DB::select('
-        select pe.name, a.name as aux, a.id
+        select pe.name, a.name as aux, pe.id
         from "postulantEnable" as pe, auxiliary a
         where pe.auxiliary = a.name and a.id = ? and pe.enable = true
         order by pe.id
