@@ -15,7 +15,7 @@ class CreateAnnouncementTable extends Migration
     {
         Schema::create('announcement',function (Blueprint $table) {
         $table->increments('id');
-        $table->string('name',50);
+        $table->string('name');
         $table->string('year', 10);
         $table->string('type', 30);
         $table->string('departament');

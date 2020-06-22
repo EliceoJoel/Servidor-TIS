@@ -7,8 +7,25 @@ use App\Auxiliary;
 class AuxiliaryController extends Controller
 {
     public function add(Request $request){
-      
-        $auxiliary = Auxiliary::create($request->all());
+      $announcement = $request->id_announcement ;
+      $item = $request->item; 
+      $name = $request->name; 
+      $queryItem = Auxiliary::select('item')->where('item', '=', $item)
+      ->where('id_announcement', '=', $announcement)
+      ->get();
+      $queryName = Auxiliary::select('name')->where('name', '=', $name)
+      ->where('id_announcement', '=', $announcement)
+      ->get();
+      if ($queryItem->isEmpty()){
+          if ($queryName->isEmpty()){
+              $auxiliary = Auxiliary::create($request->all());
+          }else{
+              $auxiliary = 'nombre';
+          }
+      }else{
+          $auxiliary = 'item'; 
+      }
+        
         return $auxiliary;
     }
     
