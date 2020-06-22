@@ -8,7 +8,16 @@ class RequirementConvController extends Controller
 {
   
     public function add(Request $request){
+        $announcement = $request->name_announcement;
+        $requirement = $request ->requirement ; 
+        $query = RequirementConv::select('requirement')->where('name_announcement', '=', $announcement)
+        ->where('requirement', '=', $requirement)
+        ->get();
+        if ($query->isEmpty()) {
         $requirementConv = RequirementConv::create($request->all());
+        }else{
+            return $requirementConv = 'false';
+        }
         return $requirementConv;
     }
     
