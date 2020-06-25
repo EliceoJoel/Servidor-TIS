@@ -13,7 +13,7 @@ class functionsController extends Controller
         $postulant = DB::select('
         select *
         from "postulantEnable"
-        where "postulantEnable".auxiliary = ? and "postulantEnable".announcement = ?', 
+        where "postulantEnable".auxiliary = ? and "postulantEnable".announcement = ? and enable = true', 
         [$auxiliary, $announcement]);
         return $postulant;
     }
@@ -184,6 +184,17 @@ class functionsController extends Controller
         ', 
         [$id]);
         return $postulant;
+    }
+
+    public function CountTheme($id){
+        $sum = DB::select('
+        select count("idPostulant")
+        from laboratory_socres
+        where "idPostulant" = ?
+        Group by "idPostulant"
+        ', 
+        [$id]);
+        return $sum;
     }
 }
 
