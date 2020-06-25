@@ -23,7 +23,7 @@ class UserController extends Controller
         select "postulantEnable".id, "postulantEnable".name, "postulantEnable".auxiliary, "postulantEnable".announcement,
         "postulantEnable".enable, "postulant_scores".score, "postulant_scores".score_oral
         from public."postulantEnable" , public."postulant_scores"
-        where "postulantEnable".id = "postulant_scores".id_postulant
+        where "postulantEnable".id = "postulant_scores".id_postulant and enable = true
         ');
         return $students;
     }
