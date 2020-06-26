@@ -252,6 +252,8 @@ Route::get('rol/{id}', 'RolController@get')->name('getRol');
 Route::post('rol/{id}', 'RolController@edit')->name('editRol');
 //delete
 Route::get('rol/delete/{id}', 'RolController@delete')->name('deleteRol');
+//get name rol
+Route::get('rolname', 'RolController@getNameRol')->name('getNameRol');
 
 //PERMISSION//
 //get all
