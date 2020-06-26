@@ -15,7 +15,7 @@ class CreateRequirementConvTable extends Migration
     {
         Schema::create('requirementConv',function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name_announcement', 50);
+            $table->string('name_announcement');
             $table->string('requirement');
             $table->timestamps();
             });
