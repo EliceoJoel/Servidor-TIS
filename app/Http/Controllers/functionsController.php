@@ -156,7 +156,7 @@ class functionsController extends Controller
 
     public function getThemeAux($id){
         $theme = DB::select('
-        select "percentageAuxiliary".theme, auxiliary.id
+        select "percentageAuxiliary".theme, auxiliary.id, "percentageAuxiliary".id  
         from "percentageAuxiliary" , auxiliary
         where "percentageAuxiliary".auxiliary = auxiliary.name and auxiliary.id = ?
 		order by theme
