@@ -7,8 +7,17 @@ use App\ThemeAuxiliary;
 class ThemeAuxiliaryController extends Controller
 {
     public function add(Request $request){
-      
+       $announcement = $request->id_announcement;
+       $name= $request->name;
+       $query = ThemeAuxiliary::select('name')->where('name', '=', $name)
+       ->where('id_announcement', '=', $announcement)
+       ->get();
+       if($query->isEmpty()){
         $themeAuxiliary = ThemeAuxiliary::create($request->all());
+    }else{
+         $themeAuxiliary = 'false';
+    }
+        
         return $themeAuxiliary;
     }
     

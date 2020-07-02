@@ -50,7 +50,7 @@ class NotasController extends Controller
           select "notas".id, "notas".nota_merito, "notas".nota_conocimiento, "notas".nota_final,
                  "postulantEnable".name, "postulantEnable".auxiliary, "postulantEnable".announcement
           from public."postulantEnable", public."notas"
-          where "postulantEnable".id = "notas".id_postulant');
+          where "postulantEnable".id = "notas".id_postulant and nota_merito>0 and nota_conocimiento>0');
         return $datos;
     }
 

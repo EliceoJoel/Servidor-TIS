@@ -7,8 +7,17 @@ use App\Merit;
 class MeritController extends Controller
 {
     public function add(Request $request){
-      
-        $merit = Merit::create($request->all());
+      $merit = $request->name;
+      $announcement = $request->id_announcement;
+      $query = Merit::select('name')->where('name', '=', $merit)
+      ->where('id_announcement', '=', $announcement)
+      ->get();
+      if($query->isEmpty()){
+          $merit = Merit::create($request->all());
+      }else{
+           $merit = 'false';
+      }
+       
         return $merit;
     }
     

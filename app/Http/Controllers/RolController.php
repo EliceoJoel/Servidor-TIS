@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 use App\Rol;
@@ -32,5 +33,12 @@ class RolController extends Controller
         $rol = $this->get($id);
         $rol->delete();
         return $rol;
+    }
+
+    public function getNameRol(){
+        $datos = DB::select('
+          select "rol".rol
+          from public."rol"');
+        return $datos;
     }
 }

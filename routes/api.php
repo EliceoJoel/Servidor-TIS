@@ -26,6 +26,7 @@ Route::get('theoryScore/{id}/{pos}', 'functionsController@getTheory')->name('get
 Route::get('getAverage/{id}', 'functionsController@getAverage')->name('getAverage');
 Route::get('updateRol/{id}/{rol}', 'functionsController@updateRol')->name('updateROl');
 Route::get('GetLabScore/{id}', 'functionsController@getPostulantLabScores')->name('getLaboratoryScores');
+Route::get('sumTheme/{id}', 'functionsController@CountTheme')->name('SumAuxTheme');
 
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
@@ -251,6 +252,8 @@ Route::get('rol/{id}', 'RolController@get')->name('getRol');
 Route::post('rol/{id}', 'RolController@edit')->name('editRol');
 //delete
 Route::get('rol/delete/{id}', 'RolController@delete')->name('deleteRol');
+//get name rol
+Route::get('rolname', 'RolController@getNameRol')->name('getNameRol');
 
 //PERMISSION//
 //get all
